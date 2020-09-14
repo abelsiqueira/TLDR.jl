@@ -1,0 +1,31 @@
+[
+  {
+    "package": "Jet",
+    "type": "header",
+    "description": "A package for fast help and snippets.",
+    "tags": [
+      "help",
+      "snippet"
+    ]
+  },
+  {
+    "package": "Jet",
+    "type": "command",
+    "command": "?",
+    "description": "Enter `jet>` mode.",
+    "tags": [
+      "help",
+      "snippet"
+    ]
+  },
+  {
+    "package": "Jet",
+    "type": "command",
+    "command": "jet\"keyword\"",
+    "description": "Search for commands and packages related to the `keyword`.",
+    "tags": [
+      "help",
+      "snippet"
+    ]
+  }
+]
