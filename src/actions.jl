@@ -26,10 +26,11 @@ Return all entries that match the `kw` in either the description or the command 
 """
 function jet_snippet(kw, should_print=false)
   output = []
+  kw = lowercase(kw)
   for entry in data
-    if contains(lowercase(entry["command"]), lowercase(kw)) ||
-       contains(lowercase(entry["description"]), lowercase(kw)) ||
-       lowercase(kw) in entry["tags"]
+    if occursin(kw, lowercase(entry["command"])) ||
+       occursin(kw, lowercase(entry["description"])) ||
+       kw in entry["tags"]
       push!(output, entry)
     end
   end
