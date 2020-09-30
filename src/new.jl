@@ -28,7 +28,7 @@ function new_entry(pkg, kind, cmd, description, tags::Vector)
       "description" => description,
       "kind" => kind,
       "package" => pkg,
-      "tags" => tags
+      "tags" => sort(tags)
     )
   )
   p(x) = x["package"]
