@@ -90,4 +90,8 @@ Create a new entry (that can be associated to a `pkg`) for a snippet `cmd`.
 - Commit with a message like "New package: ..." or "New snippet for how to ..."
 - Push to your repo, and create a PR to our `main` branch
 
+You can watch a asciinema recording below (But I forgot to commit):
+
+[![asciicast](https://asciinema.org/a/362685.svg)](https://asciinema.org/a/362685)
+
 Note: We use `rebase` and `squash` merges, so `fetch` this repo from time to time and update your `main` branch related to this one. Always branch from `main`.
