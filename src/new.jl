@@ -15,8 +15,8 @@ Some rules:
 - If `kind` is `header` then `cmd` should be "".
 """
 function new_entry(pkg, kind, cmd, description, tags::Vector)
-  if !(kind in ["header", "command"])
-    error("kind \"$kind\" not accepted. It should be \"header\" or \"command\"")
+  if !(kind in ["header", "snippet"])
+    error("kind \"$kind\" not accepted. It should be \"header\" or \"snippet\"")
   elseif length(tags) == 0
     error("Please pass some tags.")
   elseif kind == "header" && cmd != ""
@@ -32,7 +32,7 @@ function new_entry(pkg, kind, cmd, description, tags::Vector)
     )
   )
   p(x) = x["package"]
-  o(x) = Dict("header" => 1, "command" => 2)[x["kind"]]
+  o(x) = Dict("header" => 1, "snippet" => 2)[x["kind"]]
   ℓ(x) = length(x["description"])
   sort!(data, by=x->(p(x), o(x), ℓ(x)))
   open(joinpath(@__DIR__, "..", "data.json"), "w") do io

@@ -12,7 +12,7 @@
   {
     "command": "}",
     "description": "Enter `jet>` mode.",
-    "kind": "command",
+    "kind": "snippet",
     "package": "Jet",
     "tags": [
       "help",
@@ -22,7 +22,7 @@
   {
     "command": "jet\"keyword\"",
     "description": "Search for commands and packages related to the `keyword`.",
-    "kind": "command",
+    "kind": "snippet",
     "package": "Jet",
     "tags": [
       "help",
@@ -32,7 +32,7 @@
   {
     "command": "F = cholesky(A)\n  F \\ b",
     "description": "Solve a linear system `Ax = b` using the Cholesky factorization",
-    "kind": "command",
+    "kind": "snippet",
     "package": "LinearAlgebra",
     "tags": [
       "cholesky",

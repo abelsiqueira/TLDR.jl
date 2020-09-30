@@ -83,9 +83,10 @@ Create a new entry (that can be associated to a `pkg`) for a snippet `cmd`.
 
 - Fork this repo
 - Clone your repo, create a branch for your contribution(s)
-- Go inside, run `julia --project -e 'using Pkg; pkg"instantiate"`
+- Go inside, run `julia --project`
+- Instantiate the project: `]` becomes `pkg>`, then `pkg> instantiate`
 - `using Jet`
-- `new_pkg` or `new_snippet`
+- Use `new_pkg` or `new_snippet`
 - Commit with a message like "New package: ..." or "New snippet for how to ..."
 - Push to your repo, and create a PR to our `main` branch
 
