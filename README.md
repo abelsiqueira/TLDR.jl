@@ -25,16 +25,13 @@ Can also be used with `jet(str)` or `jet"str"`.
 Returns all snippets associated with package `something`.
 
 ```
-jet> pkg:Jet
-Jet
+jet> pkg:DataFrames
+DataFrames
 
-A package for fast help and snippets.
+Tools for working with tabular data.
 
-- Enter `jet>` mode.
-  `}`
-
-- Search for commands and packages related to the `keyword`.
-  `jet"keyword"`
+- Create a new DataFrame by passing the column headers and contents
+  `df = DataFrame(A = 1:3, B = [:odd, :even, :odd])`
 ```
 
 Instead of `pkg`, `package` can also be used.
