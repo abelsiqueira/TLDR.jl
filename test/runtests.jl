@@ -3,24 +3,14 @@ using Jet
 using JSON
 using Test
 
+include("output.jl")
+
 function tests()
   @testset "Basic functionality" begin
-    @test jet("pkg:Jet", false) == jet_pkg("Jet", false) == """Jet
-
-A package for fast help and snippets.
-
-- Enter `jet>` mode.
-  `}`
-
-- Search for commands and packages related to the `keyword`.
-  `jet"keyword"`
-
-"""
-
-    @test jet("cmd:}", false) == jet_snippet("}", false) == """- Enter `jet>` mode.
-  `}`
-
-"""
+    @test jet("pkg:Jet", false) == jet("package:Jet", false) == jet_pkg("Jet", false) == jet_pkg_Jet
+    @test jet("cmd:}", false) == jet("command:}", false) == jet("snippet:}") == jet("}", false) == jet_snippet("}", false) == jet_snippet_repl
+    @test jet("?", false) == jet("help", false) == jet_snippet_help
+    @test jet("?", true) === nothing
   end
 
   @testset "Data is sorted" begin
@@ -35,6 +25,14 @@ A package for fast help and snippets.
         @test p == q
       end
     end
+  end
+
+  @testset "Errors" begin
+    @test_throws ErrorException("Currently we only support one ':' in the search. See Jet's help") jet("pkg:Foo cmd:Bar")
+    @test_throws ErrorException("Unexpected action what. See Jet's help") jet("what:now")
+    @test_throws ErrorException("kind \"wrong\" not accepted. It should be \"header\" or \"snippet\"") new_entry("", "wrong", "", "", [])
+    @test_throws ErrorException("Please pass some tags.") new_entry("", "header", "", "", [])
+    @test_throws ErrorException("For kind=\"header\", cmd should be \"\"") new_entry("", "header", "empty", "", ["tags"])
   end
 
   @testset "Creating data" begin
