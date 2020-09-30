@@ -27,9 +27,10 @@ A package for fast help and snippets.
     p(x) = x["package"]
     o(x) = Dict("header" => 1, "snippet" => 2)[x["kind"]]
     ℓ(x) = length(x["description"])
-    sorted_data = sort(sort.(Jet.data), by=x->(p(x),o(x),ℓ(x)))
+    sorted_data = sort(sort.(deepcopy(Jet.data)), by=x->(p(x),o(x),ℓ(x)))
     @test Jet.data == sorted_data
     for (x,y) in zip(Jet.data, sorted_data)
+      sort!(y["tags"])
       for (p,q) in zip(x, y)
         @test p == q
       end
