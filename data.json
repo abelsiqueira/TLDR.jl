@@ -1,31 +1,43 @@
 [
   {
-    "package": "Jet",
-    "type": "header",
+    "command": "",
     "description": "A package for fast help and snippets.",
+    "kind": "header",
+    "package": "Jet",
     "tags": [
       "help",
       "snippet"
     ]
   },
   {
-    "package": "Jet",
-    "type": "command",
-    "command": "?",
+    "command": "}",
     "description": "Enter `jet>` mode.",
+    "kind": "command",
+    "package": "Jet",
     "tags": [
       "help",
       "snippet"
     ]
   },
   {
-    "package": "Jet",
-    "type": "command",
     "command": "jet\"keyword\"",
     "description": "Search for commands and packages related to the `keyword`.",
+    "kind": "command",
+    "package": "Jet",
     "tags": [
       "help",
       "snippet"
+    ]
+  },
+  {
+    "command": "F = cholesky(A)\n  F \\ b",
+    "description": "Solve a linear system `Ax = b` using the Cholesky factorization",
+    "kind": "command",
+    "package": "LinearAlgebra",
+    "tags": [
+      "cholesky",
+      "factorization",
+      "linear-algebra"
     ]
   }
 ]
