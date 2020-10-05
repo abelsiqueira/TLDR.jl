@@ -82,5 +82,77 @@
       "plotting",
       "visualization"
     ]
+  },
+  {
+    "command": "plot!(x, y)",
+    "description": "Update an existing plot",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "create",
+      "line",
+      "plot",
+      "update"
+    ]
+  },
+  {
+    "command": "savefig(\"plot.png\")",
+    "description": "Save an existing plot to a file",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "pdf",
+      "plot",
+      "png",
+      "save",
+      "store"
+    ]
+  },
+  {
+    "command": "boxplot([\"Series 1\"], y)",
+    "description": "Create a basic Boxplot on a vector of numbers",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "IQR",
+      "boxplot",
+      "create",
+      "plot"
+    ]
+  },
+  {
+    "command": "violin([\"Series 1\"], y)",
+    "description": "Create a basic Violin plot on a vector of numbers",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "create",
+      "plot",
+      "violin",
+      "violin plot"
+    ]
+  },
+  {
+    "command": "plot(x, y)",
+    "description": "Create a basic line plot on two vectors of numbers",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "create",
+      "line plot",
+      "plot"
+    ]
+  },
+  {
+    "command": "scatter(x, y)",
+    "description": "Create a basic scatter plot on two vectors of numbers",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "create",
+      "plot",
+      "scatter",
+      "scatter plot"
+    ]
   }
 ]
