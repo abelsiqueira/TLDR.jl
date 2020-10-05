@@ -62,5 +62,25 @@
       "factorization",
       "linear-algebra"
     ]
+  },
+  {
+    "command": "",
+    "description": "Plotting API and toolset",
+    "kind": "header",
+    "package": "Plots",
+    "tags": [
+      "GR",
+      "GraphRecipes",
+      "InspectDR",
+      "ORCA",
+      "PGFPlotsX",
+      "PlotlyJS",
+      "PyPlot",
+      "StatsPlots",
+      "UnicodePlots",
+      "plots",
+      "plotting",
+      "visualization"
+    ]
   }
 ]
