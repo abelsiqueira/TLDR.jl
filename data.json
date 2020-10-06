@@ -69,15 +69,6 @@
     "kind": "header",
     "package": "Plots",
     "tags": [
-      "GR",
-      "GraphRecipes",
-      "InspectDR",
-      "ORCA",
-      "PGFPlotsX",
-      "PlotlyJS",
-      "PyPlot",
-      "StatsPlots",
-      "UnicodePlots",
       "plots",
       "plotting",
       "visualization"
@@ -114,9 +105,9 @@
     "kind": "snippet",
     "package": "Plots",
     "tags": [
-      "IQR",
       "boxplot",
       "create",
+      "interquartile-range",
       "plot"
     ]
   },
@@ -129,7 +120,7 @@
       "create",
       "plot",
       "violin",
-      "violin plot"
+      "violin-plot"
     ]
   },
   {
@@ -139,7 +130,7 @@
     "package": "Plots",
     "tags": [
       "create",
-      "line plot",
+      "line-plot",
       "plot"
     ]
   },
@@ -152,7 +143,7 @@
       "create",
       "plot",
       "scatter",
-      "scatter plot"
+      "scatter-plot"
     ]
   }
 ]
