@@ -24,6 +24,112 @@
   },
   {
     "command": "",
+    "description": "Package for numerically solving differential equations.",
+    "kind": "header",
+    "package": "DifferentialEquations",
+    "tags": [
+      "differential-equations",
+      "numerical-integration",
+      "solve-equation",
+      "time-evolution"
+    ]
+  },
+  {
+    "command": "prob = DiscreteProblem(f, u0, tspan)",
+    "description": "Define a discrete time evolution problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "discrete-time",
+      "map",
+      "problem"
+    ]
+  },
+  {
+    "command": "prob = ODEProblem(eom, u0, tspan)",
+    "description": "Define an Ordinary Differential Equation problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "differential-equation",
+      "ode",
+      "ordinary-differential-equation",
+      "problem"
+    ]
+  },
+  {
+    "command": "prob = DAEProblem(eom, u0, du0, tspan)",
+    "description": "Define a Differential Algebraic Equation problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "algebraic-equation",
+      "dae",
+      "differential-algebraic-equation",
+      "differential-equation",
+      "problem"
+    ]
+  },
+  {
+    "command": "sol = solve(prob)",
+    "description": "Numerically solve a differential equation problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "integrate",
+      "solution",
+      "solve",
+      "trajectory"
+    ]
+  },
+  {
+    "command": "prob = SDEProblem(f, g, u0, tspan)",
+    "description": "Define a Stochastic Differential Equation problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "differential-equation",
+      "problem",
+      "sde",
+      "stochastic-differential-equation"
+    ]
+  },
+  {
+    "command": "prob = RODEProblem(eom, u0, tspan)",
+    "description": "Define a Random Ordinary Differential Equation problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "differential-equation",
+      "problem",
+      "random-ordinary-differential-equation",
+      "rode"
+    ]
+  },
+  {
+    "command": "cb = DiscreteCallback(condition, affect!)",
+    "description": "Define a callback that is applied when the `condition` function is `true`.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "callback",
+      "event",
+      "event-handling"
+    ]
+  },
+  {
+    "command": "cb = ContinuousCallback(condition, affect!)",
+    "description": "Define a callback that is applied when the continuous `condition` function hits zero.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "callback",
+      "event",
+      "event-handling"
+    ]
+  },
+  {
+    "command": "",
     "description": "A package for fast help and snippets.",
     "kind": "header",
     "package": "Jet",
