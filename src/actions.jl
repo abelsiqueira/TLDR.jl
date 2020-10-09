@@ -59,8 +59,22 @@ function jet(str, should_print=false)
     else
       jet_snippet(str, should_print)
     end
-  elseif length(s) > 2
-    error("Currently we only support one ':' in the search. See Jet's help")
+  # Supported searches with more than a single ':' come in the form of `pkg:Package cmd:Command`
+  elseif length(s) > 2 #TODO: Should this really be > 2?
+    first = findfirst(':', str)
+    last = findlast(':', str)
+    sep = findlast(' ', str[begin:last])
+
+    kind = [str[begin:first-1], str[sep+1:last-1]]
+    arg = [str[first+1:sep-1], str[last+1:end]]
+
+    if kind[1] in ["pkg", "package"] &&
+       kind[2] in ["cmd", "command", "snippet"]
+      println(kind)
+      println(arg)
+    else
+      error("Unexpected compound action `$(kind[1]):... $(kind[2]):...`. Maybe you meant `pkg:$(arg[1]) cmd:$(arg[2])`?")
+    end
   else
     kind = s[1]
     arg = s[2]
