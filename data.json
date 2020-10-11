@@ -1,0 +1,255 @@
+[
+  {
+    "command": "",
+    "description": "Tools for working with tabular data.",
+    "kind": "header",
+    "package": "DataFrames",
+    "tags": [
+      "data",
+      "data-frame",
+      "datasets",
+      "tabular-data"
+    ]
+  },
+  {
+    "command": "df = DataFrame(A = 1:3, B = [:odd, :even, :odd])",
+    "description": "Create a new DataFrame by passing the column headers and contents",
+    "kind": "snippet",
+    "package": "DataFrames",
+    "tags": [
+      "DataFrame",
+      "create",
+      "data"
+    ]
+  },
+  {
+    "command": "",
+    "description": "Package for numerically solving differential equations.",
+    "kind": "header",
+    "package": "DifferentialEquations",
+    "tags": [
+      "differential-equations",
+      "numerical-integration",
+      "solve-equation",
+      "time-evolution"
+    ]
+  },
+  {
+    "command": "prob = DiscreteProblem(f, u0, tspan)",
+    "description": "Define a discrete time evolution problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "discrete-time",
+      "map",
+      "problem"
+    ]
+  },
+  {
+    "command": "prob = ODEProblem(eom, u0, tspan)",
+    "description": "Define an Ordinary Differential Equation problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "differential-equation",
+      "ode",
+      "ordinary-differential-equation",
+      "problem"
+    ]
+  },
+  {
+    "command": "prob = DAEProblem(eom, u0, du0, tspan)",
+    "description": "Define a Differential Algebraic Equation problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "algebraic-equation",
+      "dae",
+      "differential-algebraic-equation",
+      "differential-equation",
+      "problem"
+    ]
+  },
+  {
+    "command": "sol = solve(prob)",
+    "description": "Numerically solve a differential equation problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "integrate",
+      "solution",
+      "solve",
+      "trajectory"
+    ]
+  },
+  {
+    "command": "prob = SDEProblem(f, g, u0, tspan)",
+    "description": "Define a Stochastic Differential Equation problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "differential-equation",
+      "problem",
+      "sde",
+      "stochastic-differential-equation"
+    ]
+  },
+  {
+    "command": "prob = RODEProblem(eom, u0, tspan)",
+    "description": "Define a Random Ordinary Differential Equation problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "differential-equation",
+      "problem",
+      "random-ordinary-differential-equation",
+      "rode"
+    ]
+  },
+  {
+    "command": "cb = DiscreteCallback(condition, affect!)",
+    "description": "Define a callback that is applied when the `condition` function is `true`.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "callback",
+      "event",
+      "event-handling"
+    ]
+  },
+  {
+    "command": "cb = ContinuousCallback(condition, affect!)",
+    "description": "Define a callback that is applied when the continuous `condition` function hits zero.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "callback",
+      "event",
+      "event-handling"
+    ]
+  },
+  {
+    "command": "",
+    "description": "A package for fast help and snippets.",
+    "kind": "header",
+    "package": "Jet",
+    "tags": [
+      "help",
+      "snippet"
+    ]
+  },
+  {
+    "command": "}",
+    "description": "Enter `jet>` mode.",
+    "kind": "snippet",
+    "package": "Jet",
+    "tags": [
+      "help",
+      "snippet"
+    ]
+  },
+  {
+    "command": "jet\"keyword\"",
+    "description": "Search for commands and packages related to the `keyword`.",
+    "kind": "snippet",
+    "package": "Jet",
+    "tags": [
+      "help",
+      "snippet"
+    ]
+  },
+  {
+    "command": "F = cholesky(A)\n  F \\ b",
+    "description": "Solve a linear system `Ax = b` using the Cholesky factorization",
+    "kind": "snippet",
+    "package": "LinearAlgebra",
+    "tags": [
+      "cholesky",
+      "factorization",
+      "linear-algebra"
+    ]
+  },
+  {
+    "command": "",
+    "description": "Plotting API and toolset",
+    "kind": "header",
+    "package": "Plots",
+    "tags": [
+      "plots",
+      "plotting",
+      "visualization"
+    ]
+  },
+  {
+    "command": "plot!(x, y)",
+    "description": "Update an existing plot",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "create",
+      "line",
+      "plot",
+      "update"
+    ]
+  },
+  {
+    "command": "savefig(\"plot.png\")",
+    "description": "Save an existing plot to a file",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "pdf",
+      "plot",
+      "png",
+      "save",
+      "store"
+    ]
+  },
+  {
+    "command": "boxplot([\"Series 1\"], y)",
+    "description": "Create a basic Boxplot on a vector of numbers",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "boxplot",
+      "create",
+      "interquartile-range",
+      "plot"
+    ]
+  },
+  {
+    "command": "violin([\"Series 1\"], y)",
+    "description": "Create a basic Violin plot on a vector of numbers",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "create",
+      "plot",
+      "violin",
+      "violin-plot"
+    ]
+  },
+  {
+    "command": "plot(x, y)",
+    "description": "Create a basic line plot on two vectors of numbers",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "create",
+      "line-plot",
+      "plot"
+    ]
+  },
+  {
+    "command": "scatter(x, y)",
+    "description": "Create a basic scatter plot on two vectors of numbers",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "create",
+      "plot",
+      "scatter",
+      "scatter-plot"
+    ]
+  }
+]

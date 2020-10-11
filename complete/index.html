@@ -1,0 +1,48 @@
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/libs/highlight/github.min.css"> <link rel=stylesheet  href="/css/franklin.css"> <link rel=stylesheet  href="/css/poole_hyde.css"> <style> html {font-size: 17px;} .franklin-content {position: relative; padding-left: 8%; padding-right: 5%; line-height: 1.35em;} @media (min-width: 940px) { .franklin-content {width: 100%; margin-left: auto; margin-right: auto;} } @media (max-width: 768px) { .franklin-content {padding-left: 6%; padding-right: 6%;} } </style> <link rel=icon  href="/assets/favicon.png"> <title>Complete list</title> <div class=sidebar > <div class="container sidebar-sticky"> <div class=sidebar-about > <img src="/assets/logo.jpg"> <h1><a href="/">Jet.jl</a></h1> <p class=lead >Julia snippets.</p> </div> <nav class=sidebar-nav > <a class="sidebar-nav-item " href="/">Home</a> <a class="sidebar-nav-item active" href="/complete/">Complete List</a> </nav> <p>&copy; Abel Soares Siqueira.</p> </div> </div> <div class="content container"> <div class=franklin-content ><h1 id=complete_list ><a href="#complete_list">Complete list</a></h1> <p>The complete list of packages currently available on Jet is below.</p> <h2 id=dataframes ><a href="#dataframes">DataFrames</a></h2> <p>Tools for working with tabular data.</p> <pre><code class="julia hljs">- Create a new DataFrame by passing the column headers and contents
+  df = DataFrame(A = <span class=hljs-number >1</span>:<span class=hljs-number >3</span>, B = [:odd, :even, :odd])</code></pre> <h2 id=differentialequations ><a href="#differentialequations">DifferentialEquations</a></h2> <p>Package for numerically solving differential equations.</p> <pre><code class="julia hljs">- Define a discrete time evolution problem.
+  prob = DiscreteProblem(f, u0, tspan)
+
+- Define an Ordinary Differential Equation problem.
+  prob = ODEProblem(eom, u0, tspan)
+
+- Define a Differential Algebraic Equation problem.
+  prob = DAEProblem(eom, u0, du0, tspan)
+
+- Numerically solve a differential equation problem.
+  sol = solve(prob)
+
+- Define a Stochastic Differential Equation problem.
+  prob = SDEProblem(f, g, u0, tspan)
+
+- Define a Random Ordinary Differential Equation problem.
+  prob = RODEProblem(eom, u0, tspan)
+
+- Define a callback that is applied when the <span class=hljs-string >`condition`</span> <span class=hljs-keyword >function</span> is <span class=hljs-string >`true`</span>.
+  cb = DiscreteCallback(condition, affect!)
+
+- Define a callback that is applied when the continuous <span class=hljs-string >`condition`</span> <span class=hljs-keyword >function</span> hits zero.
+  cb = ContinuousCallback(condition, affect!)</code></pre> <h2 id=jet ><a href="#jet">Jet</a></h2> <p>A package for fast help and snippets.</p> <pre><code class="julia hljs">- Enter <span class=hljs-string >`jet&gt;`</span> mode.
+  }
+
+- Search <span class=hljs-keyword >for</span> commands and packages related to the <span class=hljs-string >`keyword`</span>.
+  <span class=hljs-string >jet&quot;keyword&quot;</span>
+
+- Solve a linear system <span class=hljs-string >`Ax = b`</span> <span class=hljs-keyword >using</span> the Cholesky factorization
+  F = cholesky(A)
+  F \ b</code></pre> <h2 id=plots ><a href="#plots">Plots</a></h2> <p>Plotting API and toolset</p> <pre><code class="julia hljs">- Update an existing plot
+  plot!(x, y)
+
+- Save an existing plot to a file
+  savefig(<span class=hljs-string >&quot;plot.png&quot;</span>)
+
+- Create a basic Boxplot on a vector of numbers
+  boxplot([<span class=hljs-string >&quot;Series 1&quot;</span>], y)
+
+- Create a basic Violin plot on a vector of numbers
+  violin([<span class=hljs-string >&quot;Series 1&quot;</span>], y)
+
+- Create a basic line plot on two vectors of numbers
+  plot(x, y)
+
+- Create a basic scatter plot on two vectors of numbers
+  scatter(x, y)</code></pre> <div class=page-foot > <div class=copyright > &copy; Abel Soares Siqueira. Last modified: October 11, 2020. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. </div> </div> </div> </div>
