@@ -6,6 +6,7 @@ The website_* must be defined for the RSS to work
 @def website_title = "Jet"
 @def website_descr = "Julia snippets"
 @def website_url   = "https://abelsiqueira.github.io/Jet.jl/"
+@def prepath = "Jet.jl"
 
 @def author = "Abel Soares Siqueira"
 
