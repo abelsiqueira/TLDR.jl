@@ -23,12 +23,12 @@
   },
   {
     "command": "names(df)",
-    "description": "Column names can be obtained as string using the names function",
+    "description": "Get the column names",
     "kind": "snippet",
     "package": "DataFrames",
     "tags": [
-      "Columns names",
-      "String names columns",
+      "columns-name",
+      "columns-name",
       "names"
     ]
   },
@@ -45,60 +45,60 @@
   },
   {
     "command": "last(df, X)",
-    "description": "The last functions can be used to look at the last X rows of a data frame",
+    "description": "Look at the last X rows of a data frame",
     "kind": "snippet",
     "package": "DataFrames",
     "tags": [
       "last",
-      "last rows",
-      "print rows",
+      "last-rows",
+      "print-rows",
       "rows"
     ]
   },
   {
     "command": "first(df, X)",
-    "description": "The first functions can be used to look at the first X rows of a data frame",
+    "description": "Look at the firs X rows of a data frame",
     "kind": "snippet",
     "package": "DataFrames",
     "tags": [
       "first",
-      "first rows",
-      "print rows",
+      "first-rows",
+      "print-rows",
       "rows"
     ]
   },
   {
     "command": "df.A = 1:8",
-    "description": "It is also possible to start with an empty DataFrame and add columns to it one by one",
+    "description": "Add columns to it one by one in DataFrame",
     "kind": "snippet",
     "package": "DataFrames",
     "tags": [
-      "add columns",
+      "add-columns",
       "columns",
       "empty"
     ]
   },
   {
     "command": "push!(df, (1,\"M\",...))",
-    "description": "Rows can then be added as tuples or vectors, where the order of elements matches that of columns",
+    "description": "Add Rows as tuples or vectors, where the order of elements matches that of columns",
     "kind": "snippet",
     "package": "DataFrames",
     "tags": [
-      "add rows",
+      "add-rows",
       "rows"
     ]
   },
   {
     "command": "show(df, allrows=true) and show(df,allcols=true)",
-    "description": "Printing options can be adjusted by calling the show function manually: if allrows=true prints all rows even if they do not fit on screen and if allcols=true does the same for columns.",
+    "description": "Printing all rows or columns, just use allrows=true or allcols=true.",
     "kind": "snippet",
     "package": "DataFrames",
     "tags": [
-      "print dataframe",
+      "print-dataframe",
       "show",
-      "show all columns",
-      "show all rows",
-      "show dataframe"
+      "show-all-columns",
+      "show-all-rows",
+      "show-dataframe"
     ]
   },
   {
