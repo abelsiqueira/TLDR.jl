@@ -17,7 +17,7 @@
     "kind": "snippet",
     "package": "DataFrames",
     "tags": [
-      "Columns symbol names",
+      "column-names",
       "symbol names"
     ]
   },
