@@ -226,8 +226,8 @@
     "kind": "snippet",
     "package": "Distributions",
     "tags": [
+      "distribution",
       "normal-distribution",
-      "ditribution",
       "probability"
     ]
   },
@@ -237,19 +237,19 @@
     "kind": "snippet",
     "package": "Distributions",
     "tags": [
-      "normal-distributions",
-      "distributions",
+      "distribution",
+      "normal-distribution",
       "probability"
     ]
   },
   {
     "command": "d = Normal(μ, σ)",
-    "description": "The Normal distribution with mean μ and standard deviation σ.",
+    "description": "Create a Normal distribution with mean μ and standard deviation σ.",
     "kind": "snippet",
     "package": "Distributions",
     "tags": [
-      "normal-distributions",
-      "distributions",
+      "distribution",
+      "normal-distribution",
       "probability"
     ]
   },
