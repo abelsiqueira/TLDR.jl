@@ -439,8 +439,8 @@
     ]
   },
   {
-    "command": "median!(v)",
-    "description": "Compute the median of all elements of a vector v, overwriting the input vector.",
+    "command": "median(itr)",
+    "description": "Compute the median of all elements in a collection itr.",
     "kind": "snippet",
     "package": "Statistics",
     "tags": [
@@ -449,13 +449,12 @@
     ]
   },
   {
-    "command": "q = quantile!(v, p)",
-    "description": "Compute the quantile(s) of a vector v at a specified probability or vector or tuple of probabilities p on the interval [0,1], overwriting v",
+    "command": "median!(v)",
+    "description": "Compute the median of all elements of a vector v, overwriting the input vector.",
     "kind": "snippet",
     "package": "Statistics",
     "tags": [
-      "percentile",
-      "quantile",
+      "median",
       "statistics"
     ]
   },
@@ -472,12 +471,13 @@
     ]
   },
   {
-    "command": "median(itr)",
-    "description": "Compute the median of all elements in a collection itr.",
+    "command": "q = quantile!(v, p)",
+    "description": "Compute the quantile(s) of a vector v at a specified probability or vector or tuple of probabilities p on the interval [0,1], overwriting v",
     "kind": "snippet",
     "package": "Statistics",
     "tags": [
-      "median",
+      "percentile",
+      "quantile",
       "statistics"
     ]
   }
