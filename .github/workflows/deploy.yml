@@ -1,0 +1,32 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    - name: Install python
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
+    - name: Install Julia
+      uses: julia-actions/setup-julia@v1
+      with:
+        version: 1.6.1
+    - run: cd docs/; julia -e '
+            using Pkg; Pkg.add(["NodeJS", "Franklin"]);
+            using NodeJS; run(`$(npm_cmd()) install highlight.js`);
+            using Franklin;
+            Pkg.activate(".");Pkg.instantiate();
+            optimize()'
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with:
+        branch: gh-pages
+        folder: docs/__site

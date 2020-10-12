@@ -33,7 +33,7 @@ function submit()
   tags = String[]
   tag = "a"
   while tag != ""
-    print("tags (leave empty to end): ")
+    print("tag (leave empty to end): ")
     tag = readline()
     push!(tags, tag)
   end
