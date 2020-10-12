@@ -159,6 +159,55 @@
     ]
   },
   {
+    "command": "",
+    "description": "Hand-picked Krylov methods for linear systems and least squares problems",
+    "kind": "header",
+    "package": "Krylov",
+    "tags": [
+      "conjugate-gradient",
+      "krylov",
+      "least-squares",
+      "linear-algebra",
+      "linear-system",
+      "optimization"
+    ]
+  },
+  {
+    "command": "x, stats = cg(A, b)",
+    "description": "Solve linear system Ax = b using the Conjugate gradient method",
+    "kind": "snippet",
+    "package": "Krylov",
+    "tags": [
+      "conjugate-gradient",
+      "linear-algebra",
+      "linear-system"
+    ]
+  },
+  {
+    "command": "x, stats = cgls(A, b)",
+    "description": "Solve the least-squares problem ``min ½‖Ax - b‖²`` using the Conjugate gradient method",
+    "kind": "snippet",
+    "package": "Krylov",
+    "tags": [
+      "conjugate-gradient",
+      "least-squares",
+      "linear-algebra"
+    ]
+  },
+  {
+    "command": "x, stats = cg(A, b, radius=Δ)",
+    "description": "Minimize the quadratic function ``f(x) = ½xᵀAx - bᵀx`` subject to the trust region ``‖x‖ ≤ Δ`` using the Steihaug-Toint Conjugate gradient variant",
+    "kind": "snippet",
+    "package": "Krylov",
+    "tags": [
+      "conjugate-gradient",
+      "linear-algebra",
+      "quadratic-programming",
+      "steihaug-toint",
+      "trust-region"
+    ]
+  },
+  {
     "command": "F = cholesky(A)\n  F \\ b",
     "description": "Solve a linear system `Ax = b` using the Cholesky factorization",
     "kind": "snippet",
