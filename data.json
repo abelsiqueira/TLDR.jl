@@ -222,33 +222,33 @@
   },
   {
     "command": "d = Normal()",
-    "description": "The Normal distribution with mean μ=0 and standard deviation σ=1.",
+    "description": "Create a Normal distribution with mean 0 and standard deviation 1.",
     "kind": "snippet",
     "package": "Distributions",
     "tags": [
-      "Normal-distribution-mean-0-standard-deviation-1",
+      "normal-distribution",
       "ditribution",
       "probability"
     ]
   },
   {
-    "command": "d = Normal(mu)",
-    "description": "The Normal distribution with mean μ=mu and standard deviation σ=1.",
+    "command": "d = Normal(μ)",
+    "description": "Create a Normal distribution with mean μ and standard deviation 1.",
     "kind": "snippet",
     "package": "Distributions",
     "tags": [
-      "Normal-distributions-mean-mu-standard-deviation-1",
+      "normal-distributions",
       "distributions",
       "probability"
     ]
   },
   {
-    "command": "d = Normal(mu, sig)",
-    "description": "The Normal distribution with mean μ=mu and standard deviation σ=sig",
+    "command": "d = Normal(μ, σ)",
+    "description": "The Normal distribution with mean μ and standard deviation σ.",
     "kind": "snippet",
     "package": "Distributions",
     "tags": [
-      "Normal-distributions-mean-mu-standard-deviation-sig",
+      "normal-distributions",
       "distributions",
       "probability"
     ]
