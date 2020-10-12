@@ -13,7 +13,7 @@
   },
   {
     "command": "propertynames(df)",
-    "description": "Column names as Symbols use the propertynames function",
+    "description": "Get the column names as Symbols",
     "kind": "snippet",
     "package": "DataFrames",
     "tags": [
