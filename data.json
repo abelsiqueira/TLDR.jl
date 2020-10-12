@@ -27,8 +27,7 @@
     "kind": "snippet",
     "package": "DataFrames",
     "tags": [
-      "columns-name",
-      "columns-name",
+      "column-names",
       "names"
     ]
   },
@@ -69,7 +68,7 @@
   },
   {
     "command": "df.A = 1:8",
-    "description": "Add columns to it one by one in DataFrame",
+    "description": "Add a column named `A` to the the DataFrame `df`",
     "kind": "snippet",
     "package": "DataFrames",
     "tags": [
@@ -80,7 +79,7 @@
   },
   {
     "command": "push!(df, (1,\"M\",...))",
-    "description": "Add Rows as tuples or vectors, where the order of elements matches that of columns",
+    "description": "Add a new row as a tuple or vector, where the order of elements matches that of the columns of `df`",
     "kind": "snippet",
     "package": "DataFrames",
     "tags": [
@@ -89,8 +88,8 @@
     ]
   },
   {
-    "command": "show(df, allrows=true) and show(df,allcols=true)",
-    "description": "Printing all rows or columns, just use allrows=true or allcols=true.",
+    "command": "show(df, allrows=true, allcols=true)",
+    "description": "Print all rows and/or columns of the DataFrame `df`",
     "kind": "snippet",
     "package": "DataFrames",
     "tags": [
