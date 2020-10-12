@@ -428,7 +428,7 @@
   },
   {
     "command": "",
-    "description": "A Julia package for the Statistics standard library.",
+    "description": "Standard library module for basic statistics functionality.",
     "kind": "header",
     "package": "Statistics",
     "tags": [
@@ -440,22 +440,20 @@
   },
   {
     "command": "median!(v)",
-    "description": "Compute the median of all elements of a vector v. Like median, but may overwrite the input vector.",
+    "description": "Compute the median of all elements of a vector v, overwriting the input vector.",
     "kind": "snippet",
     "package": "Statistics",
     "tags": [
       "median",
-      "median!",
       "statistics"
     ]
   },
   {
     "command": "q = quantile!(v, p)",
-    "description": "Compute the quantile(s) of a vector v at a specified probability or vector or tuple of probabilities p on the interval [0,1].",
+    "description": "Compute the quantile(s) of a vector v at a specified probability or vector or tuple of probabilities p on the interval [0,1], overwriting v",
     "kind": "snippet",
     "package": "Statistics",
     "tags": [
-      "median!",
       "percentile",
       "quantile",
       "statistics"
@@ -475,7 +473,7 @@
   },
   {
     "command": "median(itr)",
-    "description": "Compute the median of all elements in a collection itr. For an even number of elements no exact median element exists, so the result is equivalent to calculating mean of two median elements.",
+    "description": "Compute the median of all elements in a collection itr.",
     "kind": "snippet",
     "package": "Statistics",
     "tags": [
