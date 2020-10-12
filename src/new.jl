@@ -1,4 +1,4 @@
-export new_entry, new_pkg, new_snippet
+export new_entry, new_pkg, new_snippet, reorder!
 
 """
     new_entry(pkg, kind, cmd, description, tags)
@@ -31,13 +31,7 @@ function new_entry(pkg, kind, cmd, description, tags::Vector)
       "tags" => sort(tags)
     )
   )
-  p(x) = x["package"]
-  o(x) = Dict("header" => 1, "snippet" => 2)[x["kind"]]
-  ℓ(x) = length(x["description"])
-  sort!(data, by=x->(p(x), o(x), ℓ(x)))
-  open(joinpath(@__DIR__, "..", "data.json"), "w") do io
-    JSON.print(io, data, 2)
-  end
+  reorder!()
 end
 
 """
@@ -68,3 +62,19 @@ Some rules:
 """
 new_snippet(cmd, desc, tags) = new_entry("", "snippet", cmd, desc, tags)
 new_snippet(pkg, cmd, desc, tags) = new_entry(pkg, "snippet", cmd, desc, tags)
+
+"""
+    reorder!()
+
+Reorder `Jet.data`. Only useful if you manually modify `Jet.data`, for instance after a Pull Request
+review. Using `new_pkg` and `new_snippet` will add everything in the correct place.
+"""
+function reorder!()
+  p(x) = x["package"]
+  o(x) = Dict("header" => 1, "snippet" => 2)[x["kind"]]
+  ℓ(x) = length(x["description"])
+  sort!(data, by=x->(p(x), o(x), ℓ(x)))
+  open(joinpath(@__DIR__, "..", "data.json"), "w") do io
+    JSON.print(io, data, 2)
+  end
+end
