@@ -255,6 +255,57 @@
   },
   {
     "command": "",
+    "description": "A variety of interpolation schemes.",
+    "kind": "header",
+    "package": "Interpolations",
+    "tags": [
+      "extrapolate",
+      "interpolate",
+      "spline"
+    ]
+  },
+  {
+    "command": "v = itp(x, y, ...)",
+    "description": "Evaluate the interpolation at position (x,y,...)",
+    "kind": "snippet",
+    "package": "Interpolations",
+    "tags": [
+      "evaluate-interpolation",
+      "interpolate"
+    ]
+  },
+  {
+    "command": "itp = interpolate(A, options...)",
+    "description": "Construct an interpolation given an AbstractArray A",
+    "kind": "snippet",
+    "package": "Interpolations",
+    "tags": [
+      "interpolate",
+      "simple-interpolate"
+    ]
+  },
+  {
+    "command": "g = Interpolations.gradient(itp, x, y, ...)",
+    "description": "Evaluate the gradient interpolation at position (x,y,...)",
+    "kind": "snippet",
+    "package": "Interpolations",
+    "tags": [
+      "evaluate-gradient",
+      "gradient"
+    ]
+  },
+  {
+    "command": "g = Interpolations.hessian(itp, x, y, ...)",
+    "description": "Evaluate the hessian interpolation at position (x,y,...), which can be obtained as",
+    "kind": "snippet",
+    "package": "Interpolations",
+    "tags": [
+      "evaluate-hessian",
+      "hessian"
+    ]
+  },
+  {
+    "command": "",
     "description": "A package for fast help and snippets.",
     "kind": "header",
     "package": "Jet",
