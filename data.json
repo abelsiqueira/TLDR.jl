@@ -208,6 +208,53 @@
   },
   {
     "command": "",
+    "description": "A Julia package for probability distributions and associated functions.",
+    "kind": "header",
+    "package": "Distributions",
+    "tags": [
+      "entropy",
+      "mass-functions",
+      "maximum-likelihood-estimation",
+      "moment-generating-functions",
+      "moments",
+      "probability-density"
+    ]
+  },
+  {
+    "command": "d = Normal()",
+    "description": "Create a Normal distribution with mean 0 and standard deviation 1.",
+    "kind": "snippet",
+    "package": "Distributions",
+    "tags": [
+      "distribution",
+      "normal-distribution",
+      "probability"
+    ]
+  },
+  {
+    "command": "d = Normal(μ)",
+    "description": "Create a Normal distribution with mean μ and standard deviation 1.",
+    "kind": "snippet",
+    "package": "Distributions",
+    "tags": [
+      "distribution",
+      "normal-distribution",
+      "probability"
+    ]
+  },
+  {
+    "command": "d = Normal(μ, σ)",
+    "description": "Create a Normal distribution with mean μ and standard deviation σ.",
+    "kind": "snippet",
+    "package": "Distributions",
+    "tags": [
+      "distribution",
+      "normal-distribution",
+      "probability"
+    ]
+  },
+  {
+    "command": "",
     "description": "A package for fast help and snippets.",
     "kind": "header",
     "package": "Jet",
