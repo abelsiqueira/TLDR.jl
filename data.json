@@ -1,6 +1,50 @@
 [
   {
     "command": "",
+    "description": "A package built to be a fast and flexible pure-Julia library for handling delimited text files.",
+    "kind": "header",
+    "package": "CSV",
+    "tags": [
+      "csv",
+      "delimited-files"
+    ]
+  },
+  {
+    "command": "CSV.Rows(source)",
+    "description": "Read a csv input and return a CSV.Rows object.",
+    "kind": "snippet",
+    "package": "CSV",
+    "tags": [
+      "csv",
+      "delimited-files",
+      "rows"
+    ]
+  },
+  {
+    "command": "CSV.File(source)",
+    "description": "Read a UTF-8 CSV input and return a CSV.File object.",
+    "kind": "snippet",
+    "package": "CSV",
+    "tags": [
+      "csv",
+      "delimited-files",
+      "read"
+    ]
+  },
+  {
+    "command": "CSV.write(file, table)",
+    "description": "Write a Tables.jl interface input to a csv file, given as an IO argument or a string with the file name to write to.",
+    "kind": "snippet",
+    "package": "CSV",
+    "tags": [
+      "csv",
+      "delimited-files",
+      "output",
+      "write"
+    ]
+  },
+  {
+    "command": "",
     "description": "Tools to write strings in different colors and styles to terminals",
     "kind": "header",
     "package": "Crayons",
@@ -532,6 +576,18 @@
       "plot",
       "scatter",
       "scatter-plot"
+    ]
+  },
+  {
+    "command": "",
+    "description": "A Julia package for the Statistics standard library.",
+    "kind": "header",
+    "package": "Statistics",
+    "tags": [
+      "mean",
+      "quantile",
+      "statistics",
+      "variance"
     ]
   },
   {
