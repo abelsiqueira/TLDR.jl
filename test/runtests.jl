@@ -28,7 +28,7 @@ function tests()
   end
 
   @testset "Errors" begin
-    @test_throws ErrorException("Currently we only support one ':' in the search. See Jet's help") jet("pkg:Foo cmd:Bar")
+    @test_throws ErrorException("Unexpected number of actions. See Jet's help") jet("pkg:Foo cmd:Bar cmd:FooBar")
     @test_throws ErrorException("Unexpected action what. See Jet's help") jet("what:now")
     @test_throws ErrorException("kind \"wrong\" not accepted. It should be \"header\" or \"snippet\"") new_entry("", "wrong", "", "", [])
     @test_throws ErrorException("Please pass some tags.") new_entry("", "header", "", "", [])

@@ -93,9 +93,9 @@ function jet(str, should_print=false)
   elseif length(s) == 3
     first = findfirst(':', str)
     last = findlast(':', str)
-    sep = findlast(' ', str[begin:last])
+    sep = findlast(' ', str[1:last])
 
-    kind = [str[begin:first-1], str[sep+1:last-1]]
+    kind = [str[1:first-1], str[sep+1:last-1]]
     pkg, keyword = [str[first+1:sep-1], str[last+1:end]]
 
     if kind[1] in ["pkg", "package"] &&
