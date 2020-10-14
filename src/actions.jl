@@ -1,4 +1,4 @@
-export jet, jet_pkg, jet_snippet, @jet_str
+export jet, jet_pkg, jet_snippet, jet_snippet_in, @jet_str
 
 macro jet_str(kw)
   jet(kw, true)
