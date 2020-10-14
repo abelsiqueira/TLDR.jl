@@ -53,14 +53,25 @@ The passed `str` determines what kind of search is made.
 """
 function jet(str, should_print=false)
   s = split(str, ":")
+  println(length(s))
   if length(s) == 1
     if str == "?" || str == "help"
       jet_pkg("Jet", should_print)
     else
       jet_snippet(str, should_print)
     end
-  # Supported searches with more than a single ':' come in the form of `pkg:Package cmd:Command`
-  elseif length(s) > 2 #TODO: Should this really be > 2?
+  elseif length(s) == 2
+    kind = s[1]
+    arg = s[2]
+    if kind in ["pkg", "package"]
+      jet_pkg(arg, should_print)
+    elseif kind in ["cmd", "command", "snippet"]
+      jet_snippet(arg, should_print)
+    else
+      error("Unexpected action $kind. See Jet's help")
+    end
+  # Currently supported searches with more than a single ':' come in the form of `pkg:Package cmd:Command`
+  elseif length(s) == 3
     first = findfirst(':', str)
     last = findlast(':', str)
     sep = findlast(' ', str[begin:last])
@@ -76,14 +87,6 @@ function jet(str, should_print=false)
       error("Unexpected compound action `$(kind[1]):... $(kind[2]):...`. Maybe you meant `pkg:$(arg[1]) cmd:$(arg[2])`?")
     end
   else
-    kind = s[1]
-    arg = s[2]
-    if kind in ["pkg", "package"]
-      jet_pkg(arg, should_print)
-    elseif kind in ["cmd", "command", "snippet"]
-      jet_snippet(arg, should_print)
-    else
-      error("Unexpected action $kind. See Jet's help")
-    end
+    error("Unexpected number of actions. See Jet's help")
   end
 end
