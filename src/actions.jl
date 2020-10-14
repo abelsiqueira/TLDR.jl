@@ -38,6 +38,26 @@ function jet_snippet(kw, should_print=false)
 end
 
 """
+    jet_snippet_in(kw, pkg_name)
+
+Return all entries part of `pkg_name` that match the `kw` in either the description or the command of the entry.
+"""
+function jet_snippet_in(kw, pkg_name, should_print=false)
+  output = []
+  kw = lowercase(kw)
+  pkg_name = lowercase(pkg_name)
+  for entry in data
+    if lowercase(entry["package"]) == pkg_name &&
+       (occursin(kw, lowercase(entry["command"])) ||
+       occursin(kw, lowercase(entry["description"])) ||
+       kw in entry["tags"])
+      push!(output, entry)
+    end
+  end
+  format(output, should_print)
+end
+
+"""
     jet(str, print=false)
 
 The main function of `jet`, called when the `jet>` REPL or `jet"str"` are used.
@@ -53,7 +73,6 @@ The passed `str` determines what kind of search is made.
 """
 function jet(str, should_print=false)
   s = split(str, ":")
-  println(length(s))
   if length(s) == 1
     if str == "?" || str == "help"
       jet_pkg("Jet", should_print)
@@ -77,12 +96,11 @@ function jet(str, should_print=false)
     sep = findlast(' ', str[begin:last])
 
     kind = [str[begin:first-1], str[sep+1:last-1]]
-    arg = [str[first+1:sep-1], str[last+1:end]]
+    pkg, keyword = [str[first+1:sep-1], str[last+1:end]]
 
     if kind[1] in ["pkg", "package"] &&
-       kind[2] in ["cmd", "command", "snippet"]
-      println(kind)
-      println(arg)
+      kind[2] in ["cmd", "command", "snippet"]
+      jet_snippet_in(keyword, pkg, should_print)
     else
       error("Unexpected compound action `$(kind[1]):... $(kind[2]):...`. Maybe you meant `pkg:$(arg[1]) cmd:$(arg[2])`?")
     end
