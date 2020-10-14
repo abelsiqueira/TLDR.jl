@@ -105,7 +105,7 @@ function jet(str, should_print=false)
            kind[1] in ["cmd", "command", "snippet"]
       jet_snippet_in(kws[1], kws[2], should_print)
     else
-      error("Unexpected compound action `$(kind[1]):... $(kind[2]):...`. Maybe you meant `pkg:$(arg[1]) cmd:$(arg[2])`?")
+      error("Unexpected compound action `$(kind[1]):... $(kind[2]):...`. Maybe you meant `pkg:$(kws[1]) cmd:$(kws[2])`?")
     end
   else
     error("Unexpected number of actions. See Jet's help")
