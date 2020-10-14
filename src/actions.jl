@@ -96,11 +96,14 @@ function jet(str, should_print=false)
     sep = findlast(' ', str[1:last])
 
     kind = [str[1:first-1], str[sep+1:last-1]]
-    pkg, keyword = [str[first+1:sep-1], str[last+1:end]]
+    kws = [str[first+1:sep-1], str[last+1:end]]
 
     if kind[1] in ["pkg", "package"] &&
        kind[2] in ["cmd", "command", "snippet"]
-      jet_snippet_in(keyword, pkg, should_print)
+      jet_snippet_in(keyword, kws[1], kws[2])
+    elseif kind[2] in ["pkg", "package"] &&
+           kind[1] in ["cmd", "command", "snippet"]
+      jet_snippet_in(keyword, kws[2], kws[1])
     else
       error("Unexpected compound action `$(kind[1]):... $(kind[2]):...`. Maybe you meant `pkg:$(arg[1]) cmd:$(arg[2])`?")
     end
