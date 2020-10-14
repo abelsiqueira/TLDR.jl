@@ -89,7 +89,7 @@ function jet(str, should_print=false)
     else
       error("Unexpected action $kind. See Jet's help")
     end
-  # Currently supported searches with more than a single ':' come in the form of `pkg:Package cmd:Command`
+  # Currently supported searches with more than a single ':' come in the form of either `pkg:Package cmd:Command` or `cmd:Command pkg:Package`
   elseif length(s) == 3
     first = findfirst(':', str)
     last = findlast(':', str)
@@ -100,10 +100,10 @@ function jet(str, should_print=false)
 
     if kind[1] in ["pkg", "package"] &&
        kind[2] in ["cmd", "command", "snippet"]
-      jet_snippet_in(keyword, kws[1], kws[2])
+      jet_snippet_in(kws[2], kws[1], should_print)
     elseif kind[2] in ["pkg", "package"] &&
            kind[1] in ["cmd", "command", "snippet"]
-      jet_snippet_in(keyword, kws[2], kws[1])
+      jet_snippet_in(kws[1], kws[2], should_print)
     else
       error("Unexpected compound action `$(kind[1]):... $(kind[2]):...`. Maybe you meant `pkg:$(arg[1]) cmd:$(arg[2])`?")
     end
