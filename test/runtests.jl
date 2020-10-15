@@ -9,6 +9,7 @@ function tests()
   @testset "Basic functionality" begin
     @test jet("pkg:Jet", false) == jet("package:Jet", false) == jet_pkg("Jet", false) == jet_pkg_Jet
     @test jet("cmd:}", false) == jet("command:}", false) == jet("snippet:}") == jet("}", false) == jet_snippet("}", false) == jet_snippet_repl
+    @test jet("pkg:Jet cmd:for", false) == jet("cmd:for pkg:Jet", false) == jet_snippet_in("for", "Jet", false) == jet_search_for
     @test jet("?", false) == jet("help", false) == jet_snippet_help
     @test jet("?", true) === nothing
   end
@@ -28,8 +29,9 @@ function tests()
   end
 
   @testset "Errors" begin
-    @test_throws ErrorException("Currently we only support one ':' in the search. See Jet's help") jet("pkg:Foo cmd:Bar")
+    @test_throws ErrorException("Unexpected number of actions. See Jet's help") jet("pkg:Foo cmd:Bar cmd:FooBar")
     @test_throws ErrorException("Unexpected action what. See Jet's help") jet("what:now")
+    @test_throws ErrorException("Unexpected compound action `potato:... tomato:...`. Maybe you meant `pkg:tomato cmd:potato`?") jet("potato:tomato tomato:potato")
     @test_throws ErrorException("kind \"wrong\" not accepted. It should be \"header\" or \"snippet\"") new_entry("", "wrong", "", "", [])
     @test_throws ErrorException("Please pass some tags.") new_entry("", "header", "", "", [])
     @test_throws ErrorException("For kind=\"header\", cmd should be \"\"") new_entry("", "header", "empty", "", ["tags"])

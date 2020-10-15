@@ -26,3 +26,12 @@ A package for fast help and snippets.
   `jet"keyword"`
 
 """
+
+const jet_search_for = """Jet
+
+A package for fast help and snippets.
+
+- Search for commands and packages related to the `keyword`.
+  `jet"keyword"`
+
+"""
