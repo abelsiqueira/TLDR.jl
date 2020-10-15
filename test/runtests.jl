@@ -31,6 +31,7 @@ function tests()
   @testset "Errors" begin
     @test_throws ErrorException("Unexpected number of actions. See Jet's help") jet("pkg:Foo cmd:Bar cmd:FooBar")
     @test_throws ErrorException("Unexpected action what. See Jet's help") jet("what:now")
+    @test_throws ErrorException("Unexpected compound action `potato:... tomato:...`. Maybe you meant `pkg:tomato cmd:potato`?") jet("potato:tomato tomato:potato")
     @test_throws ErrorException("kind \"wrong\" not accepted. It should be \"header\" or \"snippet\"") new_entry("", "wrong", "", "", [])
     @test_throws ErrorException("Please pass some tags.") new_entry("", "header", "", "", [])
     @test_throws ErrorException("For kind=\"header\", cmd should be \"\"") new_entry("", "header", "empty", "", ["tags"])
