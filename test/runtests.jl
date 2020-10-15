@@ -1,7 +1,6 @@
 using DataStructures
 using Jet
 using JSON
-using Crayons
 using Test
 
 include("output.jl")
