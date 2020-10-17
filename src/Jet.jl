@@ -4,6 +4,7 @@ using DataStructures
 using JSON
 using Markdown
 using ReplMaker
+using Crayons
 
 function __init__()
   global data = JSON.parsefile(joinpath(@__DIR__, "..", "data.json"), dicttype=OrderedDict)
