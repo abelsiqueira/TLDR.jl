@@ -3,6 +3,44 @@ export jet, jet_pkg, jet_snippet, jet_snippet_in, @jet_str
 macro jet_str(kw)
   jet(kw, true)
 end
+"""
+  searchpkg(::string1,::string2,::bool)
+Returns you the ratio of matching of strings for search results
+"""
+
+function searchpkg(s,t, ratio_calc=false)
+    r = length(s)+1
+    c = length(t)+1
+    dis_map= zeros(Int8, r, c)
+    
+    for i in 0:r-1
+        for k in 0:c-1
+            dis_map[i+1, 1] = i
+            dis_map[1, k+1] = k
+        end
+    end
+    for col in 1:c-1
+        for row in 1:r-1
+            if s[row] == t[col]
+                cost =0
+            else
+                if ratio_calc == true
+                    cost = 2
+                else
+                    cost = 1
+                end
+            end
+            dis_map[row+1,col+1]=min(dis_map[row,col+1] + 1,      
+                                 dis_map[row+1,col] + 1, 
+                                 dis_map[row,col] + cost)
+        end
+    
+    end
+    if ratio_calc == true
+        Ratio = ((length(s)+length(t) - dis_map[r,c])/(length(s)+length(t)))
+    end
+    return Ratio
+end
 
 """
     jet_pkg(pkg_name)
@@ -11,11 +49,23 @@ Return all entries for which its package field matches `pkg_name`.
 """
 function jet_pkg(pkg_name, should_print=false)
   output = []
+  i=0
   for entry in data
+    searchratio=searchpkg(lowercase(entry["package"]),lowercase(pkg_name),true)
     if lowercase(entry["package"]) == lowercase(pkg_name)
+      i=i+1
+      push!(output, entry)
+    elseif searchratio>0.5
+      i=i+1
       push!(output, entry)
     end
   end
+  if  i == 0
+    println("No package found")
+  elseif i > 0
+    println("$(i-1) snippets were found close to package $(pkg_name)")
+  end
+
   format(output, should_print)
 end
 
@@ -28,6 +78,7 @@ function jet_snippet(kw, should_print=false)
   output = []
   kw = lowercase(kw)
   for entry in data
+    
     if occursin(kw, lowercase(entry["command"])) ||
        occursin(kw, lowercase(entry["description"])) ||
        kw in entry["tags"]
