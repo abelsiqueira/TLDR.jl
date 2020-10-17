@@ -1,7 +1,7 @@
-const title_crayon  = Crayon(foreground = :light_cyan, bold = true, underline = true)
-const desc_crayon = Crayon(foreground = :light_cyan, bold = true, underline = false)
+const title_crayon    = Crayon(foreground = :light_cyan, bold = true, underline = true)
+const desc_crayon     = Crayon(foreground = :light_cyan, bold = true, underline = false)
 const cmd_desc_crayon = Crayon(foreground = :green, bold = false)
-const cmd_crayon = Crayon(foreground = :blue)
+const cmd_crayon      = Crayon(foreground = :blue)
 
 """
     format(output, print)
