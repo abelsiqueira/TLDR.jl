@@ -1,6 +1,47 @@
 [
   {
     "command": "",
+    "description": "Tools to write strings in different colors and styles to terminals",
+    "kind": "header",
+    "package": "Crayons",
+    "tags": [
+      "color",
+      "output"
+    ]
+  },
+  {
+    "command": "print(Crayon(foreground = :red, bold = true, underline = true), \"Bold red text with underline\")",
+    "description": "Print a string using Crayons for formatting",
+    "kind": "snippet",
+    "package": "Crayons",
+    "tags": [
+      "color",
+      "output",
+      "print"
+    ]
+  },
+  {
+    "command": "r_fg = Crayon(foreground = :red, bold = true)",
+    "description": "Create a new Crayon with red foreground color and bold text formatting",
+    "kind": "snippet",
+    "package": "Crayons",
+    "tags": [
+      "color",
+      "output"
+    ]
+  },
+  {
+    "command": "merged = merge(Crayon(foreground:red), Crayon(background: green))",
+    "description": "Merge two crayons with different properties in this case the new crayon will have red foreground color and green background color",
+    "kind": "snippet",
+    "package": "Crayons",
+    "tags": [
+      "color",
+      "merge"
+    ]
+  },
+  {
+    "command": "",
     "description": "Tools for working with tabular data.",
     "kind": "header",
     "package": "DataFrames",
