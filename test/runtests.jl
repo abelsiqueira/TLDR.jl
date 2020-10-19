@@ -8,10 +8,10 @@ include("output.jl")
 function tests()
   @testset "Basic functionality" begin
     @test jet("pkg:Jet", false) == jet("package:Jet", false) == jet_pkg("Jet", false) == jet_pkg_Jet
-    @test jet("cmd:}", false) == jet("command:}", false) == jet("snippet:}") == jet("}", false) == jet_snippet("}", false) == jet_snippet_repl
+    @test jet("cmd:}", false) == jet("command:}", false) == jet("}", false) == jet_snippet("}", false) == jet_snippet_repl
     @test jet("pkg:Jet cmd:for", false) == jet("cmd:for pkg:Jet", false) == jet_snippet_in("for", "Jet", false) == jet_search_for
     @test jet("?", false) == jet("help", false) == jet_snippet_help
-    @test jet("?", true) === nothing
+    @test jet("?", true) === jet("?") === jet_pkg("Jet") === jet_snippet("?") === jet_snippet_in("?", "Jet") === nothing
   end
 
   @testset "Data is sorted" begin
