@@ -4,27 +4,40 @@ const cmd_desc_crayon = Crayon(foreground = :green, bold = false)
 const cmd_crayon      = Crayon(foreground = :blue)
 
 """
-    format(output, print)
+    build_unformatted_output(output)
 
-Internal function. Formats the output of the internal `pkg_` commands.
+Internal function. Build the output of the internal `pkg_` commands, without formatting the output with color and syntax highlighting.
 """
-function format(output, should_print)
+function build_unformatted_output(output)
   # Build output
   s = ""
   for entry in output
     if entry["kind"] == "header"
       s *= entry["package"] * "\n\n" * entry["description"] * "\n\n"
-      if should_print
-        print(title_crayon, entry["package"] * "\n\n", desc_crayon, entry["description"] * "\n\n")
-      end
     else
       s *= "- " * entry["description"] * "\n  `" * entry["command"] * "`\n\n"
-      if should_print
-        print(cmd_desc_crayon, "- " * entry["description"] * "\n ", cmd_crayon, "`"*entry["command"], "`\n\n")
-      end
     end
   end
-  if !should_print
-    s
+  s
+end
+
+"""
+    build_formatted_output(output)
+
+Internal function. Build the output of the internal `pkg_` commands, formatting it.
+"""
+function build_formatted_output(output)
+  # Build output
+  for entry in output
+    if entry["kind"] == "header"
+      println(title_crayon, entry["package"])
+      println("")
+      println(desc_crayon,  entry["description"])
+      println("")
+    else
+      println(cmd_desc_crayon, "- ", entry["description"])
+      println(cmd_crayon,      "  ", entry["command"])
+      println("")
+    end
   end
 end

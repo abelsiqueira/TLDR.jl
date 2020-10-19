@@ -9,14 +9,18 @@ end
 
 Return all entries for which its package field matches `pkg_name`.
 """
-function jet_pkg(pkg_name, should_print=false)
+function jet_pkg(pkg_name, should_print=true)
   output = []
   for entry in data
     if lowercase(entry["package"]) == lowercase(pkg_name)
       push!(output, entry)
     end
   end
-  format(output, should_print)
+  if should_print
+    build_formatted_output(output)
+  else
+    build_unformatted_output(output)
+  end
 end
 
 """
@@ -24,7 +28,7 @@ end
 
 Return all entries that match the `kw` in either the description or the command of the entry.
 """
-function jet_snippet(kw, should_print=false)
+function jet_snippet(kw, should_print=true)
   output = []
   kw = lowercase(kw)
   for entry in data
@@ -34,7 +38,11 @@ function jet_snippet(kw, should_print=false)
       push!(output, entry)
     end
   end
-  format(output, should_print)
+  if should_print
+    build_formatted_output(output)
+  else
+    build_unformatted_output(output)
+  end
 end
 
 """
@@ -42,7 +50,7 @@ end
 
 Return all entries part of `pkg_name` that match the `kw` in either the description or the command of the entry.
 """
-function jet_snippet_in(kw, pkg_name, should_print=false)
+function jet_snippet_in(kw, pkg_name, should_print=true)
   output = []
   kw = lowercase(kw)
   pkg_name = lowercase(pkg_name)
@@ -54,11 +62,15 @@ function jet_snippet_in(kw, pkg_name, should_print=false)
       push!(output, entry)
     end
   end
-  format(output, should_print)
+  if should_print
+    build_formatted_output(output)
+  else
+    build_unformatted_output(output)
+  end
 end
 
 """
-    jet(str, print=false)
+    jet(str, print=true)
 
 The main function of `jet`, called when the `jet>` REPL or `jet"str"` are used.
 The passed `str` determines what kind of search is made.
@@ -71,7 +83,7 @@ The passed `str` determines what kind of search is made.
 
 - `str = something`: Equivalent to `cmd:something`.
 """
-function jet(str, should_print=false)
+function jet(str, should_print=true)
   s = split(str, ":")
   if length(s) == 1
     if str == "?" || str == "help"
