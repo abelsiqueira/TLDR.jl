@@ -318,7 +318,7 @@
   },
   {
     "command": "model = Chain(Dense(10, 5, σ), Dense(5,3), softmax)",
-    "description": "Chains different layers to form a deep neural network model",
+    "description": "Chain different layers to form a deep neural network model",
     "kind": "snippet",
     "package": "Flux",
     "tags": [
@@ -328,7 +328,7 @@
   },
   {
     "command": "opt = Descent(0.1)",
-    "description": "Creates a Gradient Descent optimiser with learning rate 0.1",
+    "description": "Create a Gradient Descent optimiser with learning rate 0.1",
     "kind": "snippet",
     "package": "Flux",
     "tags": [
@@ -339,7 +339,7 @@
   },
   {
     "command": "ps = Flux.params(m)",
-    "description": "Extracts the parameters of a model `m` which can be later passed on to the `gradient` function",
+    "description": "Extract the parameters of a model `m` which can be later passed on to the `gradient` function",
     "kind": "snippet",
     "package": "Flux",
     "tags": [
@@ -349,17 +349,8 @@
     ]
   },
   {
-    "command": "df(x) = gradient(x -> 3x^2+ 2x + 1, x)[1]",
-    "description": "The gradient function takes another Julia function f and a set of arguments, and returns the gradient with respect to each argument.",
-    "kind": "snippet",
-    "package": "Flux",
-    "tags": [
-      "gradients"
-    ]
-  },
-  {
     "command": "train!(loss, params, data, opt; cb)",
-    "description": "For each datapoint `d` in `data`, compute the gradient of `loss` with respect to `params` through backpropagation and call the optimizer `opt`. An optional callback is given with the keyword argument `cb`",
+    "description": "Train the model. For each datapoint in `data`, compute the gradient of `loss` with respect to `params` through backpropagation and call the optimizer `opt`. An optional callback is given with the keyword argument `cb`",
     "kind": "snippet",
     "package": "Flux",
     "tags": [
@@ -596,6 +587,24 @@
       "percentile",
       "quantile",
       "statistics"
+    ]
+  },
+  {
+    "command": "",
+    "description": "Automatic Differentiation in Julia",
+    "kind": "header",
+    "package": "Zygote",
+    "tags": [
+      "gradients"
+    ]
+  },
+  {
+    "command": "df(x) = gradient(x -> 3x^2+ 2x + 1, x)[1]",
+    "description": "The gradient function takes another Julia function f and a set of arguments, and returns the gradient with respect to each argument.",
+    "kind": "snippet",
+    "package": "Zygote",
+    "tags": [
+      "gradients"
     ]
   }
 ]
