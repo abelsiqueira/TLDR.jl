@@ -599,8 +599,8 @@
     ]
   },
   {
-    "command": "df(x) = gradient(x -> 3x^2+ 2x + 1, x)[1]",
-    "description": "The gradient function takes another Julia function f and a set of arguments, and returns the gradient with respect to each argument.",
+    "command": "gradient(f, args...)",
+    "description": "Computes the gradient of f at each argument, returning a tuple.",
     "kind": "snippet",
     "package": "Zygote",
     "tags": [
