@@ -1,6 +1,50 @@
 [
   {
     "command": "",
+    "description": "A package built to be a fast and flexible pure-Julia library for handling delimited text files.",
+    "kind": "header",
+    "package": "CSV",
+    "tags": [
+      "csv",
+      "delimited-files"
+    ]
+  },
+  {
+    "command": "CSV.File(source)",
+    "description": "Read a CSV input.",
+    "kind": "snippet",
+    "package": "CSV",
+    "tags": [
+      "csv",
+      "delimited-files",
+      "read"
+    ]
+  },
+  {
+    "command": "CSV.write(file, table)",
+    "description": "Write table to file.",
+    "kind": "snippet",
+    "package": "CSV",
+    "tags": [
+      "csv",
+      "delimited-files",
+      "output",
+      "write"
+    ]
+  },
+  {
+    "command": "for row in CSV.Rows(source)\n      # do something\n  end",
+    "description": "Read a csv input iterating over its rows. Only the current row values are buffered.",
+    "kind": "snippet",
+    "package": "CSV",
+    "tags": [
+      "csv",
+      "delimited-files",
+      "rows"
+    ]
+  },
+  {
+    "command": "",
     "description": "Tools to write strings in different colors and styles to terminals",
     "kind": "header",
     "package": "Crayons",
