@@ -296,6 +296,73 @@
   },
   {
     "command": "",
+    "description": "The Julia Machine Learning Library",
+    "kind": "header",
+    "package": "Flux",
+    "tags": [
+      "ai",
+      "deep-learning",
+      "gradients",
+      "machine-learning"
+    ]
+  },
+  {
+    "command": "layer = Dense(10, 5, σ)",
+    "description": "Create a Dense layer with a sigmoid activation function",
+    "kind": "snippet",
+    "package": "Flux",
+    "tags": [
+      "layers",
+      "neural-networks"
+    ]
+  },
+  {
+    "command": "model = Chain(Dense(10, 5, σ), Dense(5,3), softmax)",
+    "description": "Chain different layers to form a deep neural network model",
+    "kind": "snippet",
+    "package": "Flux",
+    "tags": [
+      "layers",
+      "neural-networks"
+    ]
+  },
+  {
+    "command": "opt = Descent(0.1)",
+    "description": "Create a Gradient Descent optimiser with learning rate 0.1",
+    "kind": "snippet",
+    "package": "Flux",
+    "tags": [
+      "gradient-descent",
+      "neural-network",
+      "optimization"
+    ]
+  },
+  {
+    "command": "ps = Flux.params(m)",
+    "description": "Extract the parameters of a model `m` which can be later passed on to the `gradient` function",
+    "kind": "snippet",
+    "package": "Flux",
+    "tags": [
+      "gradients",
+      "model",
+      "parametes"
+    ]
+  },
+  {
+    "command": "train!(loss, params, data, opt; cb)",
+    "description": "Train the model. For each datapoint in `data`, compute the gradient of `loss` with respect to `params` through backpropagation and call the optimizer `opt`. An optional callback is given with the keyword argument `cb`",
+    "kind": "snippet",
+    "package": "Flux",
+    "tags": [
+      "backpropagation",
+      "callback",
+      "neural-networks",
+      "optimization",
+      "training"
+    ]
+  },
+  {
+    "command": "",
     "description": "A package for fast help and snippets.",
     "kind": "header",
     "package": "Jet",
@@ -520,6 +587,24 @@
       "percentile",
       "quantile",
       "statistics"
+    ]
+  },
+  {
+    "command": "",
+    "description": "Automatic Differentiation in Julia",
+    "kind": "header",
+    "package": "Zygote",
+    "tags": [
+      "gradients"
+    ]
+  },
+  {
+    "command": "gradient(f, args...)",
+    "description": "Computes the gradient of f at each argument, returning a tuple.",
+    "kind": "snippet",
+    "package": "Zygote",
+    "tags": [
+      "gradients"
     ]
   }
 ]
