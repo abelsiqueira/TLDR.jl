@@ -108,6 +108,17 @@
     ]
   },
   {
+    "command": "df2 = copy(df)",
+    "description": "Return a new data frame df2 that is a copy of df",
+    "kind": "snippet",
+    "package": "DataFrames",
+    "tags": [
+      "DataFrame",
+      "copy",
+      "data"
+    ]
+  },
+  {
     "command": "show(df, allrows=true, allcols=true)",
     "description": "Print all rows and/or columns of the DataFrame `df`",
     "kind": "snippet",
@@ -129,6 +140,30 @@
       "DataFrame",
       "create",
       "data"
+    ]
+  },
+  {
+    "command": "replace!(df.col_1, \"None\" => 0)",
+    "description": "Replace \"None\" values by zero in a single column col_1 of dataframe df",
+    "kind": "snippet",
+    "package": "DataFrames",
+    "tags": [
+      "DataFrame",
+      "data",
+      "replace",
+      "single column"
+    ]
+  },
+  {
+    "command": "describe(df)",
+    "description": "Return a data frame with some elementary statistics and information about each column",
+    "kind": "snippet",
+    "package": "DataFrames",
+    "tags": [
+      "DataFrame",
+      "data",
+      "describe",
+      "statistics"
     ]
   },
   {
