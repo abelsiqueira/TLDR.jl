@@ -10,17 +10,6 @@
     ]
   },
   {
-    "command": "for row in CSV.Rows(source)\n      # do something\n  end",
-    "description": "Read a csv input iterating over its rows. Only the current row values are buffered.",
-    "kind": "snippet",
-    "package": "CSV",
-    "tags": [
-      "csv",
-      "delimited-files",
-      "rows"
-    ]
-  },
-  {
     "command": "CSV.File(source)",
     "description": "Read a CSV input.",
     "kind": "snippet",
@@ -41,6 +30,17 @@
       "delimited-files",
       "output",
       "write"
+    ]
+  },
+  {
+    "command": "for row in CSV.Rows(source)\n      # do something\n  end",
+    "description": "Read a csv input iterating over its rows. Only the current row values are buffered.",
+    "kind": "snippet",
+    "package": "CSV",
+    "tags": [
+      "csv",
+      "delimited-files",
+      "rows"
     ]
   },
   {
