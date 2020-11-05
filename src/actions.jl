@@ -15,7 +15,7 @@ function jet_pkg(pkg_name, should_print=true)
   for entry in data
     if lowercase(entry["package"]) == lowercase(pkg_name)
       push!(output, entry)
-    elseif StringDistances.compare(entry["package"], lowercase(pkg_name), TokenMax(Levenshtein())) > 0.6
+    elseif StringDistances.compare(lowercase(entry["package"]), lowercase(pkg_name), TokenMax(Levenshtein())) > 0.7
       push!(output, entry)
       i = i+1
     end
@@ -42,7 +42,7 @@ function jet_snippet(kw, should_print=true)
   i = 0
   for entry in data
     for tag in entry["tags"]
-      if kw == lowercase(tag) || StringDistances.compare(kw, lowercase(tag), TokenMax(Levenshtein())) > 0.7
+      if kw == lowercase(tag) || StringDistances.compare(kw, lowercase(tag), TokenMax(Levenshtein())) > 0.6
         i = i+1
       end
     end
@@ -71,7 +71,7 @@ function jet_snippet_in(kw, pkg_name, should_print=true)
   pkg_name = lowercase(pkg_name)
   for entry in data
     for tag in entry["tags"]
-      if kw == lowercase(tag) || StringDistances.compare(kw, lowercase(tag), TokenMax(Levenshtein())) > 0.7
+      if kw == lowercase(tag) || StringDistances.compare(kw, lowercase(tag), TokenMax(Levenshtein())) > 0.6
         i = i+1
       end
     end
