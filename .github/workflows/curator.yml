@@ -1,0 +1,32 @@
+name: curator
+on:
+  issue_comment:
+    types: [created, edited]
+  workflow_dispatch:
+
+jobs:
+  build:
+    if: ${{ github.event.issue.number == '1' }} || ${{ github.event.action }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: julia-actions/setup-julia@v1
+      - uses: julia-actions/julia-buildpkg@v1
+      - name: New entry based on issue comment
+        id: curator
+        run: julia --project .github/curator.jl
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "${{ steps.curator.outputs.cimsg }}"
+          title: '[AUTO] New entry ${{ steps.curator.outputs.cimsg }}'
+          body: ":robot: cf. @${{ github.actor }}"
+          branch: auto-new-entry-pr-${{ steps.curator.outputs.inum }}
+          delete-branch: true
+          labels: automated pr, new entry
+      - name: Check outputs
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"

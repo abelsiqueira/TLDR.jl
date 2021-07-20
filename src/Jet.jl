@@ -2,6 +2,8 @@ module Jet
 
 using Crayons
 using DataStructures
+using InteractiveUtils
+using GitHub
 using JSON
 using Markdown
 using ReplMaker
@@ -15,5 +17,6 @@ include("actions.jl")
 include("format.jl")
 include("new.jl")
 include("repl.jl")
+include("submit.jl")
 
 end # module
