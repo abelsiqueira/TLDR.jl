@@ -22,15 +22,18 @@ function new_entry(pkg, kind, cmd, description, tags::Vector)
   elseif kind == "header" && cmd != ""
     error("For kind=\"header\", cmd should be \"\"")
   end
-  push!(data,
-    OrderedDict{String,Any}(
-      "command" => cmd,
-      "description" => description,
-      "kind" => kind,
-      "package" => pkg,
-      "tags" => sort(tags)
-    )
+  D = OrderedDict{String,Any}(
+    "command" => cmd,
+    "description" => description,
+    "kind" => kind,
+    "package" => pkg,
+    "tags" => sort(tags)
   )
+  if D in data
+    @warn("Entry already exists, ignoring")
+    return
+  end
+  push!(data, D)
   reorder!()
 end
 

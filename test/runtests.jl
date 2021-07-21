@@ -49,6 +49,10 @@ function tests()
     new_pkg("FAKE", "FAKE description", ["A", "B"])
     new_snippet("FAKE", "1 = 0", "FAKE snippet", ["C", "D"])
     new_snippet("1 < 0", "Another FAKE snippet", ["C", "E"])
+    # Adding twice to test that it doesn't repeat
+    new_pkg("FAKE", "FAKE description", ["A", "B"])
+    new_snippet("FAKE", "1 = 0", "FAKE snippet", ["C", "D"])
+    new_snippet("1 < 0", "Another FAKE snippet", ["C", "E"])
     push!(manual_data, OrderedDict(
       "command" => "",
       "description" => "FAKE description",
