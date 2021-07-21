@@ -1,10 +1,10 @@
-using GitHub, Jet, JSON
+using GitHub, TLDR, JSON
 
-cmts = GitHub.comments("abelsiqueira/Jet.jl", 26, :issue)[1]
+cmts = GitHub.comments("abelsiqueira/TLDR.jl", 26, :issue)[1]
 cmt = cmts[end]
 inum = length(cmts)
 D = JSON.parse(cmt.body)
-Jet.new_entry(D["package"], D["kind"], D["command"], D["description"], D["tags"])
+TLDR.new_entry(D["package"], D["kind"], D["command"], D["description"], D["tags"])
 cimsg = ":robot: New entry: "
 if D["package"] != ""
   cimsg *= D["package"] * " - "

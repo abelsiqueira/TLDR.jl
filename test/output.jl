@@ -1,37 +1,37 @@
-const jet_pkg_Jet = """Jet
+const tldr_pkg_TLDR = """TLDR
 
 A package for fast help and snippets.
 
-- Enter `jet>` mode.
+- Enter `tldr>` mode.
   `}`
 
 - Search for commands and packages related to the `keyword`.
-  `jet"keyword"`
+  `tldr"keyword"`
 
 """
 
-const jet_snippet_repl = """- Enter `jet>` mode.
+const tldr_snippet_repl = """- Enter `tldr>` mode.
   `}`
 
 """
 
-const jet_snippet_help = """Jet
+const tldr_snippet_help = """TLDR
 
 A package for fast help and snippets.
 
-- Enter `jet>` mode.
+- Enter `tldr>` mode.
   `}`
 
 - Search for commands and packages related to the `keyword`.
-  `jet"keyword"`
+  `tldr"keyword"`
 
 """
 
-const jet_search_for = """Jet
+const tldr_search_for = """TLDR
 
 A package for fast help and snippets.
 
 - Search for commands and packages related to the `keyword`.
-  `jet"keyword"`
+  `tldr"keyword"`
 
 """

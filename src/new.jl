@@ -3,13 +3,13 @@ export new_entry, new_pkg, new_snippet, reorder!
 """
     new_entry(pkg, kind, cmd, description, tags)
 
-Create a new entry on `Jet.data` adding it in the correct order.
+Create a new entry on `TLDR.data` adding it in the correct order.
 You probably want `new_pkg` or `new_snippet` instead.
 
 Some rules:
 
 - All entries should be strings, except for `tags` which is an array of strings.
-- `pkg` should be the case sensitive package name (no .jl), e.g. "Jet".
+- `pkg` should be the case sensitive package name (no .jl), e.g. "TLDR".
 - `kind` should be either `header` or `snippet`.
 - `tags` shouldn't be empty.
 - If `kind` is `header` then `cmd` should be "".
@@ -37,12 +37,12 @@ end
 """
     new_pkg(pkg, description, tags)
 
-Create a new entry for a package on `Jet.data` adding it in the correct order.
+Create a new entry for a package on `TLDR.data` adding it in the correct order.
 
 Some rules:
 
 - All entries should be strings, except for `tags` which is an array of strings.
-- `pkg` should be the case sensitive package name (no .jl), e.g. "Jet".
+- `pkg` should be the case sensitive package name (no .jl), e.g. "TLDR".
 - `tags` shouldn't be empty.
 """
 new_pkg(pkg, desc, tags) = new_entry(pkg, "header", "", desc, tags)
@@ -51,13 +51,13 @@ new_pkg(pkg, desc, tags) = new_entry(pkg, "header", "", desc, tags)
     new_snippet(cmd, description, tags)
     new_snippet(pkg, cmd, description, tags)
 
-Create a new snippet entry on `Jet.data` adding it in the correct order.
+Create a new snippet entry on `TLDR.data` adding it in the correct order.
 If the snippet depends on a package to work, then `pkg` should be passed.
 
 Some rules:
 
 - All entries should be strings, except for `tags` which is an array of strings.
-- `pkg` should be the case sensitive package name (no .jl), e.g. "Jet".
+- `pkg` should be the case sensitive package name (no .jl), e.g. "TLDR".
 - `tags` shouldn't be empty.
 """
 new_snippet(cmd, desc, tags) = new_entry("", "snippet", cmd, desc, tags)
@@ -66,7 +66,7 @@ new_snippet(pkg, cmd, desc, tags) = new_entry(pkg, "snippet", cmd, desc, tags)
 """
     reorder!()
 
-Reorder `Jet.data`. Only useful if you manually modify `Jet.data`, for instance after a Pull Request
+Reorder `TLDR.data`. Only useful if you manually modify `TLDR.data`, for instance after a Pull Request
 review. Using `new_pkg` and `new_snippet` will add everything in the correct place.
 """
 function reorder!()

@@ -1,31 +1,33 @@
-# Jet
+# TLDR
 
 _A package for fast help and snippets._
 
-[![Travis CI](https://img.shields.io/travis/abelsiqueira/Jet.jl.svg?style=flat-square)](https://travis-ci.com/abelsiqueira/Jet.jl)
-[![Coveralls](https://img.shields.io/coveralls/abelsiqueira/Jet.jl.svg?style=flat-square)](https://coveralls.io/github/abelsiqueira/Jet.jl?branch=main)
-[![GitHub](https://img.shields.io/github/release/abelsiqueira/Jet.jl.svg?style=flat-square)](https://github.com/abelsiqueira/Jet.jl/releases)
+TLDR means Too Long, Didn't Read. This package is inspired by [tldr-pages](https://tldr.sh), but focused on Julia. They probably don't overlap.
+
+[![CI](https://github.com/abelsiqueira/TLDR.jl/actions/workflows/ci.yml/badge.svg)](https://github.com/abelsiqueira/TLDR.jl/actions/workflows/ci.yml)
+[![Coveralls](https://img.shields.io/coveralls/abelsiqueira/TLDR.jl.svg?style=flat-square)](https://coveralls.io/github/abelsiqueira/TLDR.jl?branch=main)
+[![GitHub](https://img.shields.io/github/release/abelsiqueira/TLDR.jl.svg?style=flat-square)](https://github.com/abelsiqueira/TLDR.jl/releases)
 
 
 **Work in progress, let me know your opinion**
 
 ```julia
-julia> using Jet
-julia> jet_repl()
+julia> using TLDR
+julia> tldr_repl()
 julia> # Press }
-jet>
+tldr>
 ```
 
-Can also be used with `jet(str)` or `jet"str"`.
+Can also be used with `tldr(str)` or `tldr"str"`.
 
 ## Actions
 
-### `jet> pkg:something`
+### `tldr> pkg:something`
 
 Returns all snippets associated with package `something`.
 
 ```
-jet> pkg:DataFrames
+tldr> pkg:DataFrames
 DataFrames
 
 Tools for working with tabular data.
@@ -36,10 +38,10 @@ Tools for working with tabular data.
 
 Instead of `pkg`, `package` can also be used.
 
-### `jet> cmd:something`
+### `tldr> cmd:something`
 
 ```
-jet> cmd:chol
+tldr> cmd:chol
 - Solve a linear system `Ax = b` using the Cholesky factorization
   `F = cholesky(A)
   F \ b`
@@ -47,21 +49,21 @@ jet> cmd:chol
 
 Instead of `cmd`, `command` or `snippet` can also be used. The argument can also be ignored.
 
-### `jet> ?`
+### `tldr> ?`
 
-Same as `pkg:Jet`.
+Same as `pkg:TLDR`.
 
 ```
-jet> cmd:?
-Jet
+tldr> cmd:?
+TLDR
 
 A package for fast help and snippets.
 
-- Enter `jet>` mode.
+- Enter `tldr>` mode.
   `}`
 
 - Search for commands and packages related to the `keyword`.
-  `jet"keyword"`
+  `tldr"keyword"`
 ```
 
 ## Contributing
@@ -82,7 +84,7 @@ Create a new entry (that can be associated to a `pkg`) for a snippet `cmd`.
 - Clone your repo, create a branch for your contribution(s)
 - Go inside, run `julia --project`
 - Instantiate the project: `]` becomes `pkg>`, then `pkg> instantiate`
-- `using Jet`
+- `using TLDR`
 - Use `new_pkg` or `new_snippet`
 - Commit with a message like "New package: ..." or "New snippet for how to ..."
 - Push to your repo, and create a PR to our `main` branch

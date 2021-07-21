@@ -452,36 +452,6 @@
   },
   {
     "command": "",
-    "description": "A package for fast help and snippets.",
-    "kind": "header",
-    "package": "Jet",
-    "tags": [
-      "help",
-      "snippet"
-    ]
-  },
-  {
-    "command": "}",
-    "description": "Enter `jet>` mode.",
-    "kind": "snippet",
-    "package": "Jet",
-    "tags": [
-      "help",
-      "snippet"
-    ]
-  },
-  {
-    "command": "jet\"keyword\"",
-    "description": "Search for commands and packages related to the `keyword`.",
-    "kind": "snippet",
-    "package": "Jet",
-    "tags": [
-      "help",
-      "snippet"
-    ]
-  },
-  {
-    "command": "",
     "description": "Hand-picked Krylov methods for linear systems and least squares problems",
     "kind": "header",
     "package": "Krylov",
@@ -676,6 +646,36 @@
       "percentile",
       "quantile",
       "statistics"
+    ]
+  },
+  {
+    "command": "",
+    "description": "A package for fast help and snippets.",
+    "kind": "header",
+    "package": "TLDR",
+    "tags": [
+      "help",
+      "snippet"
+    ]
+  },
+  {
+    "command": "}",
+    "description": "Enter `tldr>` mode.",
+    "kind": "snippet",
+    "package": "TLDR",
+    "tags": [
+      "help",
+      "snippet"
+    ]
+  },
+  {
+    "command": "tldr\"keyword\"",
+    "description": "Search for commands and packages related to the `keyword`.",
+    "kind": "snippet",
+    "package": "TLDR",
+    "tags": [
+      "help",
+      "snippet"
     ]
   },
   {

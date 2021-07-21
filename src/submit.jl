@@ -1,14 +1,14 @@
 export file_submit, submit
 
 function warn_github_usage()
-  @warn("""Jet uses your GitHub credentials to post on GitHub.
+  @warn("""TLDR uses your GitHub credentials to post on GitHub.
 
     #######################################
     #  If you don't want that, stop now!  #
     #######################################
 
   You can write the issue on GitHub directly here:
-      https://github.com/abelsiqueira/Jet.jl/issues/26""")
+      https://github.com/abelsiqueira/TLDR.jl/issues/26""")
 end
 
 function submit()
@@ -99,5 +99,5 @@ function write_issue(msg)
   end
   myauth = GitHub.authenticate(token)
   msg = Dict("body" => msg)
-  GitHub.create_comment("abelsiqueira/Jet.jl", 26, :issue, auth=myauth, params=msg)
+  GitHub.create_comment("abelsiqueira/TLDR.jl", 26, :issue, auth=myauth, params=msg)
 end

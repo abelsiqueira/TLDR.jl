@@ -1,16 +1,16 @@
-export jet_repl
+export tldr_repl
 
 """
-    jet_repl()
+    tldr_repl()
 
-Creates a REPL associated to the key `}` equivalent to calling `jet(s, true)` or `jet"str"`.
+Creates a REPL associated to the key `}` equivalent to calling `tldr(s, true)` or `tldr"str"`.
 """
-function jet_repl()
+function tldr_repl()
   ReplMaker.initrepl(
-    s -> jet(s, true),
-    prompt_text = "jet> ",
+    s -> tldr(s, true),
+    prompt_text = "tldr> ",
     prompt_color = :black,
     start_key = '}',
-    mode_name = "Jet_mode"
+    mode_name = "TLDR_mode"
   )
 end

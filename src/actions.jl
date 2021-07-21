@@ -1,15 +1,15 @@
-export jet, jet_pkg, jet_snippet, jet_snippet_in, @jet_str
+export tldr, tldr_pkg, tldr_snippet, tldr_snippet_in, @tldr_str
 
-macro jet_str(kw)
-  jet(kw, true)
+macro tldr_str(kw)
+  tldr(kw, true)
 end
 
 """
-    jet_pkg(pkg_name)
+    tldr_pkg(pkg_name)
 
 Return all entries for which its package field matches `pkg_name`.
 """
-function jet_pkg(pkg_name, should_print=true)
+function tldr_pkg(pkg_name, should_print=true)
   output = []
   i = 0
   for entry in data
@@ -32,11 +32,11 @@ function jet_pkg(pkg_name, should_print=true)
 end
 
 """
-    jet_snippet(kw)
+    tldr_snippet(kw)
 
 Return all entries that match the `kw` in either the description or the command of the entry.
 """
-function jet_snippet(kw, should_print=true)
+function tldr_snippet(kw, should_print=true)
   output = []
   kw = lowercase(kw)
   i = 0
@@ -60,11 +60,11 @@ function jet_snippet(kw, should_print=true)
 end
 
 """
-    jet_snippet_in(kw, pkg_name)
+    tldr_snippet_in(kw, pkg_name)
 
 Return all entries part of `pkg_name` that match the `kw` in either the description or the command of the entry.
 """
-function jet_snippet_in(kw, pkg_name, should_print=true)
+function tldr_snippet_in(kw, pkg_name, should_print=true)
   output = []
   kw = lowercase(kw)
   i = 0
@@ -91,12 +91,12 @@ function jet_snippet_in(kw, pkg_name, should_print=true)
 end
 
 """
-    jet(str, print=true)
+    tldr(str, print=true)
 
-The main function of `jet`, called when the `jet>` REPL or `jet"str"` are used.
+The main function of `tldr`, called when the `tldr>` REPL or `tldr"str"` are used.
 The passed `str` determines what kind of search is made.
 
-- `str` is either `?` or `help`: equivalent to `jet> pkg:Jet`.
+- `str` is either `?` or `help`: equivalent to `tldr> pkg:tldr`.
 
 - `str = pkg:something`: searches for commands associated to the package `something`.
 
@@ -104,23 +104,23 @@ The passed `str` determines what kind of search is made.
 
 - `str = something`: Equivalent to `cmd:something`.
 """
-function jet(str, should_print=true)
+function tldr(str, should_print=true)
   s = split(str, ":")
   if length(s) == 1
     if str == "?" || str == "help"
-      jet_pkg("Jet", should_print)
+      tldr_pkg("tldr", should_print)
     else
-      jet_snippet(str, should_print)
+      tldr_snippet(str, should_print)
     end
   elseif length(s) == 2
     kind = s[1]
     arg = s[2]
     if kind in ["pkg", "package"]
-      jet_pkg(arg, should_print)
+      tldr_pkg(arg, should_print)
     elseif kind in ["cmd", "command", "snippet"]
-      jet_snippet(arg, should_print)
+      tldr_snippet(arg, should_print)
     else
-      error("Unexpected action $kind. See Jet's help")
+      error("Unexpected action $kind. See tldr's help")
     end
   # Currently supported searches with more than a single ':' come in the form of either `pkg:Package cmd:Command` or `cmd:Command pkg:Package`
   elseif length(s) == 3
@@ -133,14 +133,14 @@ function jet(str, should_print=true)
 
     if kind[1] in ["pkg", "package"] &&
        kind[2] in ["cmd", "command", "snippet"]
-      jet_snippet_in(kws[2], kws[1], should_print)
+      tldr_snippet_in(kws[2], kws[1], should_print)
     elseif kind[2] in ["pkg", "package"] &&
            kind[1] in ["cmd", "command", "snippet"]
-      jet_snippet_in(kws[1], kws[2], should_print)
+      tldr_snippet_in(kws[1], kws[2], should_print)
     else
       error("Unexpected compound action `$(kind[1]):... $(kind[2]):...`. Maybe you meant `pkg:$(kws[1]) cmd:$(kws[2])`?")
     end
   else
-    error("Unexpected number of actions. See Jet's help")
+    error("Unexpected number of actions. See tldr's help")
   end
 end

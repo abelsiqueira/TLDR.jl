@@ -1,4 +1,4 @@
-name = "Jet"
+name = "TLDR"
 uuid = "ea576619-15d3-4675-b24c-7b7a8f11ced0"
 authors = ["Abel Soares Siqueira <abel.s.siqueira@gmail.com>"]
 version = "0.1.0"
@@ -16,8 +16,10 @@ StringDistances = "88034a9c-02f8-509d-84a9-84ec65e18404"
 [compat]
 Crayons = "4.0"
 DataStructures = "0.18"
+GitHub = "5"
 JSON = "0.21"
 ReplMaker = "0.2"
+StringDistances = "0.10"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
