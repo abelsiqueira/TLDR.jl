@@ -441,6 +441,16 @@
     ]
   },
   {
+    "command": "JSON.json(dict)",
+    "description": "Convert dict to JSON",
+    "kind": "snippet",
+    "package": "JSON",
+    "tags": [
+      "convert",
+      "json"
+    ]
+  },
+  {
     "command": "",
     "description": "A package for fast help and snippets.",
     "kind": "header",
