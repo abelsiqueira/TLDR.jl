@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    if: ${{ github.event.issue.number == '1' }} || ${{ github.event.action }}
+    if: ${{ github.event.issue.number == '26' }} || ${{ github.event.workflow_dispatch }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
