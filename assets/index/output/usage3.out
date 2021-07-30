@@ -1,0 +1,5 @@
+- Solve a linear system `Ax = b` using the Cholesky factorization
+  `F = cholesky(A)
+  F \ b`
+
+

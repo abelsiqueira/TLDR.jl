@@ -1,0 +1,11 @@
+TLDR
+
+A package for fast help and snippets.
+
+- Enter `tldr>` mode.
+  `}`
+
+- Search for commands and packages related to the `keyword`.
+  `tldr"keyword"`
+
+

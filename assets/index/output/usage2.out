@@ -1,0 +1,11 @@
+CSV
+
+A package built to be a fast and flexible pure-Julia library for handling delimited text files.
+
+- Read a CSV input.
+  `CSV.File(source)`
+
+- Write table to file.
+  `CSV.write(file, table)`
+
+...

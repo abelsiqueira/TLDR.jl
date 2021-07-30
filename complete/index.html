@@ -1,48 +1,135 @@
-<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/Jet.jl/libs/highlight/github.min.css"> <link rel=stylesheet  href="/Jet.jl/css/franklin.css"> <link rel=stylesheet  href="/Jet.jl/css/poole_hyde.css"> <style> html {font-size: 17px;} .franklin-content {position: relative; padding-left: 8%; padding-right: 5%; line-height: 1.35em;} @media (min-width: 940px) { .franklin-content {width: 100%; margin-left: auto; margin-right: auto;} } @media (max-width: 768px) { .franklin-content {padding-left: 6%; padding-right: 6%;} } </style> <link rel=icon  href="/Jet.jl/assets/favicon.png"> <title>Complete list</title> <div class=sidebar > <div class="container sidebar-sticky"> <div class=sidebar-about > <img src="/Jet.jl/assets/logo.jpg"> <h1><a href="/Jet.jl/">Jet.jl</a></h1> <p class=lead >Julia snippets.</p> </div> <nav class=sidebar-nav > <a class="sidebar-nav-item " href="/Jet.jl/">Home</a> <a class="sidebar-nav-item active" href="/Jet.jl/complete/">Complete List</a> </nav> <p>&copy; Abel Soares Siqueira.</p> </div> </div> <div class="content container"> <div class=franklin-content ><h1 id=complete_list ><a href="#complete_list">Complete list</a></h1> <p>The complete list of packages currently available on Jet is below.</p> <h2 id=dataframes ><a href="#dataframes">DataFrames</a></h2> <p>Tools for working with tabular data.</p> <pre><code class="julia hljs">- Create a new DataFrame by passing the column headers and contents
-  df = DataFrame(A = <span class=hljs-number >1</span>:<span class=hljs-number >3</span>, B = [:odd, :even, :odd])</code></pre> <h2 id=differentialequations ><a href="#differentialequations">DifferentialEquations</a></h2> <p>Package for numerically solving differential equations.</p> <pre><code class="julia hljs">- Define a discrete time evolution problem.
-  prob = DiscreteProblem(f, u0, tspan)
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/libs/highlight/github.min.css"> <link rel=stylesheet  href="/css/franklin.css"> <link rel=stylesheet  href="/css/poole_hyde.css"> <style> html {font-size: 17px;} .franklin-content {position: relative; padding-left: 8%; padding-right: 5%; line-height: 1.35em;} @media (min-width: 940px) { .franklin-content {width: 100%; margin-left: auto; margin-right: auto;} } @media (max-width: 768px) { .franklin-content {padding-left: 6%; padding-right: 6%;} } </style> <link rel=icon  href="/assets/favicon.png"> <title>Complete list</title> <div class=sidebar > <div class="container sidebar-sticky"> <div class=sidebar-about > <img src="/assets/logo.jpg"> <h1><a href="/">TLDR.jl</a></h1> <p class=lead >Julia snippets.</p> </div> <nav class=sidebar-nav > <a class="sidebar-nav-item " href="/">Home</a> <a class="sidebar-nav-item active" href="/contributing/">Contributing</a> <a class="sidebar-nav-item active" href="/complete/">Complete List</a> </nav> <p>&copy; Abel Soares Siqueira.</p> </div> </div> <div class="content container"> <div class=franklin-content ><h1 id=complete_list ><a href="#complete_list" class=header-anchor >Complete list</a></h1> <p>The complete list of packages currently available on TLDR is below.</p> <h2 id=csv ><a href="#csv" class=header-anchor >CSV</a></h2> <p>A package built to be a fast and flexible pure-Julia library for handling delimited text files.</p> <pre><code class=language-julia >- Read a CSV input.
+  CSV.File&#40;source&#41;
+
+- Write table to file.
+  CSV.write&#40;file, table&#41;
+
+- Read a csv input iterating over its rows. Only the current row values are buffered.
+  for row in CSV.Rows&#40;source&#41;
+      # do something
+  end</code></pre> <h2 id=crayons ><a href="#crayons" class=header-anchor >Crayons</a></h2> <p>Tools to write strings in different colors and styles to terminals</p> <pre><code class=language-julia >- Print a string using Crayons for formatting
+  print&#40;Crayon&#40;foreground &#61; :red, bold &#61; true, underline &#61; true&#41;, &quot;Bold red text with underline&quot;&#41;
+
+- Create a new Crayon with red foreground color and bold text formatting
+  r_fg &#61; Crayon&#40;foreground &#61; :red, bold &#61; true&#41;
+
+- Merge two crayons with different properties in this case the new crayon will have red foreground color and green background color
+  merged &#61; merge&#40;Crayon&#40;foreground:red&#41;, Crayon&#40;background: green&#41;&#41;</code></pre> <h2 id=dataframes ><a href="#dataframes" class=header-anchor >DataFrames</a></h2> <p>Tools for working with tabular data.</p> <pre><code class=language-julia >- Get the column names
+  names&#40;df&#41;
+
+- Get the column names as Symbols
+  propertynames&#40;df&#41;
+
+- Look at the last X rows of a data frame
+  last&#40;df, X&#41;
+
+- Look at the firs X rows of a data frame
+  first&#40;df, X&#41;
+
+- Add a column named &#96;A&#96; to the the DataFrame &#96;df&#96;
+  df.A &#61; 1:8
+
+- Return a new data frame df2 that is a copy of df
+  df2 &#61; copy&#40;df&#41;
+
+- Print all rows and/or columns of the DataFrame &#96;df&#96;
+  show&#40;df, allrows&#61;true, allcols&#61;true&#41;
+
+- Create a new DataFrame by passing the column headers and contents
+  df &#61; DataFrame&#40;A &#61; 1:3, B &#61; &#91;:odd, :even, :odd&#93;&#41;
+
+- Replace &quot;None&quot; values by zero in a single column col_1 of dataframe df
+  replace&#33;&#40;df.col_1, &quot;None&quot; &#61;&gt; 0&#41;
+
+- Return a data frame with some elementary statistics and information about each column
+  describe&#40;df&#41;
+
+- Add a new row as a tuple or vector, where the order of elements matches that of the columns of &#96;df&#96;
+  push&#33;&#40;df, &#40;1,&quot;M&quot;,...&#41;&#41;</code></pre> <h2 id=differentialequations ><a href="#differentialequations" class=header-anchor >DifferentialEquations</a></h2> <p>Package for numerically solving differential equations.</p> <pre><code class=language-julia >- Define a discrete time evolution problem.
+  prob &#61; DiscreteProblem&#40;f, u0, tspan&#41;
 
 - Define an Ordinary Differential Equation problem.
-  prob = ODEProblem(eom, u0, tspan)
+  prob &#61; ODEProblem&#40;eom, u0, tspan&#41;
 
 - Define a Differential Algebraic Equation problem.
-  prob = DAEProblem(eom, u0, du0, tspan)
+  prob &#61; DAEProblem&#40;eom, u0, du0, tspan&#41;
 
 - Numerically solve a differential equation problem.
-  sol = solve(prob)
+  sol &#61; solve&#40;prob&#41;
 
 - Define a Stochastic Differential Equation problem.
-  prob = SDEProblem(f, g, u0, tspan)
+  prob &#61; SDEProblem&#40;f, g, u0, tspan&#41;
 
 - Define a Random Ordinary Differential Equation problem.
-  prob = RODEProblem(eom, u0, tspan)
+  prob &#61; RODEProblem&#40;eom, u0, tspan&#41;
 
-- Define a callback that is applied when the <span class=hljs-string >`condition`</span> <span class=hljs-keyword >function</span> is <span class=hljs-string >`true`</span>.
-  cb = DiscreteCallback(condition, affect!)
+- Define a callback that is applied when the &#96;condition&#96; function is &#96;true&#96;.
+  cb &#61; DiscreteCallback&#40;condition, affect&#33;&#41;
 
-- Define a callback that is applied when the continuous <span class=hljs-string >`condition`</span> <span class=hljs-keyword >function</span> hits zero.
-  cb = ContinuousCallback(condition, affect!)</code></pre> <h2 id=jet ><a href="#jet">Jet</a></h2> <p>A package for fast help and snippets.</p> <pre><code class="julia hljs">- Enter <span class=hljs-string >`jet&gt;`</span> mode.
-  }
+- Define a callback that is applied when the continuous &#96;condition&#96; function hits zero.
+  cb &#61; ContinuousCallback&#40;condition, affect&#33;&#41;</code></pre> <h2 id=distributions ><a href="#distributions" class=header-anchor >Distributions</a></h2> <p>A Julia package for probability distributions and associated functions.</p> <pre><code class=language-julia >- Create a Normal distribution with mean 0 and standard deviation 1.
+  d &#61; Normal&#40;&#41;
 
-- Search <span class=hljs-keyword >for</span> commands and packages related to the <span class=hljs-string >`keyword`</span>.
-  <span class=hljs-string >jet&quot;keyword&quot;</span>
+- Create a Normal distribution with mean μ and standard deviation 1.
+  d &#61; Normal&#40;μ&#41;
 
-- Solve a linear system <span class=hljs-string >`Ax = b`</span> <span class=hljs-keyword >using</span> the Cholesky factorization
-  F = cholesky(A)
-  F \ b</code></pre> <h2 id=plots ><a href="#plots">Plots</a></h2> <p>Plotting API and toolset</p> <pre><code class="julia hljs">- Update an existing plot
-  plot!(x, y)
+- Create a Normal distribution with mean μ and standard deviation σ.
+  d &#61; Normal&#40;μ, σ&#41;</code></pre> <h2 id=flux ><a href="#flux" class=header-anchor >Flux</a></h2> <p>The Julia Machine Learning Library</p> <pre><code class=language-julia >- Create a Dense layer with a sigmoid activation function
+  layer &#61; Dense&#40;10, 5, σ&#41;
+
+- Chain different layers to form a deep neural network model
+  model &#61; Chain&#40;Dense&#40;10, 5, σ&#41;, Dense&#40;5,3&#41;, softmax&#41;
+
+- Create a Gradient Descent optimiser with learning rate 0.1
+  opt &#61; Descent&#40;0.1&#41;
+
+- Extract the parameters of a model &#96;m&#96; which can be later passed on to the &#96;gradient&#96; function
+  ps &#61; Flux.params&#40;m&#41;
+
+- Train the model. For each datapoint in &#96;data&#96;, compute the gradient of &#96;loss&#96; with respect to &#96;params&#96; through backpropagation and call the optimizer &#96;opt&#96;. An optional callback is given with the keyword argument &#96;cb&#96;
+  train&#33;&#40;loss, params, data, opt; cb&#41;
+
+- Convert dict to JSON
+  JSON.json&#40;dict&#41;</code></pre> <h2 id=krylov ><a href="#krylov" class=header-anchor >Krylov</a></h2> <p>Hand-picked Krylov methods for linear systems and least squares problems</p> <pre><code class=language-julia >- Solve linear system Ax &#61; b using the Conjugate gradient method
+  x, stats &#61; cg&#40;A, b&#41;
+
+- Solve the least-squares problem &#96;&#96;min ½‖Ax - b‖²&#96;&#96; using the Conjugate gradient method
+  x, stats &#61; cgls&#40;A, b&#41;
+
+- Minimize the quadratic function &#96;&#96;f&#40;x&#41; &#61; ½xᵀAx - bᵀx&#96;&#96; subject to the trust region &#96;&#96;‖x‖ ≤ Δ&#96;&#96; using the Steihaug-Toint Conjugate gradient variant
+  x, stats &#61; cg&#40;A, b, radius&#61;Δ&#41;
+
+- Solve a linear system &#96;Ax &#61; b&#96; using the Cholesky factorization
+  F &#61; cholesky&#40;A&#41;
+  F \ b</code></pre> <h2 id=plots ><a href="#plots" class=header-anchor >Plots</a></h2> <p>Plotting API and toolset</p> <pre><code class=language-julia >- Update an existing plot
+  plot&#33;&#40;x, y&#41;
 
 - Save an existing plot to a file
-  savefig(<span class=hljs-string >&quot;plot.png&quot;</span>)
+  savefig&#40;&quot;plot.png&quot;&#41;
 
 - Create a basic Boxplot on a vector of numbers
-  boxplot([<span class=hljs-string >&quot;Series 1&quot;</span>], y)
+  boxplot&#40;&#91;&quot;Series 1&quot;&#93;, y&#41;
 
 - Create a basic Violin plot on a vector of numbers
-  violin([<span class=hljs-string >&quot;Series 1&quot;</span>], y)
+  violin&#40;&#91;&quot;Series 1&quot;&#93;, y&#41;
 
 - Create a basic line plot on two vectors of numbers
-  plot(x, y)
+  plot&#40;x, y&#41;
 
 - Create a basic scatter plot on two vectors of numbers
-  scatter(x, y)</code></pre> <div class=page-foot > <div class=copyright > &copy; Abel Soares Siqueira. Last modified: October 11, 2020. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. </div> </div> </div> </div>
+  scatter&#40;x, y&#41;</code></pre> <h2 id=statistics ><a href="#statistics" class=header-anchor >Statistics</a></h2> <p>Standard library module for basic statistics functionality.</p> <pre><code class=language-julia >- Compute the median of all elements in a collection itr.
+  median&#40;itr&#41;
+
+- Compute the median of all elements of a vector v, overwriting the input vector.
+  median&#33;&#40;v&#41;
+
+- Compute the quantile&#40;s&#41; of a collection itr at a specified probability or vector or tuple of probabilities p on the interval &#91;0,1&#93;.
+  q &#61; quantile&#40;itr, p&#41;
+
+- Compute the quantile&#40;s&#41; of a vector v at a specified probability or vector or tuple of probabilities p on the interval &#91;0,1&#93;, overwriting v
+  q &#61; quantile&#33;&#40;v, p&#41;</code></pre> <h2 id=tldr ><a href="#tldr" class=header-anchor >TLDR</a></h2> <p>A package for fast help and snippets.</p> <pre><code class=language-julia >- Enter &#96;tldr&gt;&#96; mode.
+  &#125;
+
+- Search for commands and packages related to the &#96;keyword&#96;.
+  tldr&quot;keyword&quot;</code></pre> <h2 id=zygote ><a href="#zygote" class=header-anchor >Zygote</a></h2> <p>Automatic Differentiation in Julia</p> <pre><code class=language-julia >- Computes the gradient of f at each argument, returning a tuple.
+  gradient&#40;f, args...&#41;</code></pre> <div class=page-foot > <div class=copyright > &copy; Abel Soares Siqueira. Last modified: July 30, 2021. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. </div> </div> </div> </div> <script src="/libs/highlight/highlight.pack.js"></script> <script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: ' '});</script>
