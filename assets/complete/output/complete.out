@@ -1,0 +1,231 @@
+## CSV
+A package built to be a fast and flexible pure-Julia library for handling delimited text files.
+- Read a CSV input.
+```julia
+CSV.File(source)
+```
+- Write table to file.
+```julia
+CSV.write(file, table)
+```
+- Read a csv input iterating over its rows. Only the current row values are buffered.
+```julia
+for row in CSV.Rows(source)
+# do something
+end
+```
+## Crayons
+Tools to write strings in different colors and styles to terminals
+- Print a string using Crayons for formatting
+```julia
+print(Crayon(foreground = :red, bold = true, underline = true), "Bold red text with underline")
+```
+- Create a new Crayon with red foreground color and bold text formatting
+```julia
+r_fg = Crayon(foreground = :red, bold = true)
+```
+- Merge two crayons with different properties in this case the new crayon will have red foreground color and green background color
+```julia
+merged = merge(Crayon(foreground:red), Crayon(background: green))
+```
+## DataFrames
+Tools for working with tabular data.
+- Get the column names
+```julia
+names(df)
+```
+- Get the column names as Symbols
+```julia
+propertynames(df)
+```
+- Look at the last X rows of a data frame
+```julia
+last(df, X)
+```
+- Look at the firs X rows of a data frame
+```julia
+first(df, X)
+```
+- Add a column named `A` to the the DataFrame `df`
+```julia
+df.A = 1:8
+```
+- Return a new data frame df2 that is a copy of df
+```julia
+df2 = copy(df)
+```
+- Print all rows and/or columns of the DataFrame `df`
+```julia
+show(df, allrows=true, allcols=true)
+```
+- Create a new DataFrame by passing the column headers and contents
+```julia
+df = DataFrame(A = 1:3, B = [:odd, :even, :odd])
+```
+- Replace "None" values by zero in a single column col_1 of dataframe df
+```julia
+replace!(df.col_1, "None" => 0)
+```
+- Return a data frame with some elementary statistics and information about each column
+```julia
+describe(df)
+```
+- Add a new row as a tuple or vector, where the order of elements matches that of the columns of `df`
+```julia
+push!(df, (1,"M",...))
+```
+## DifferentialEquations
+Package for numerically solving differential equations.
+- Define a discrete time evolution problem.
+```julia
+prob = DiscreteProblem(f, u0, tspan)
+```
+- Define an Ordinary Differential Equation problem.
+```julia
+prob = ODEProblem(eom, u0, tspan)
+```
+- Define a Differential Algebraic Equation problem.
+```julia
+prob = DAEProblem(eom, u0, du0, tspan)
+```
+- Numerically solve a differential equation problem.
+```julia
+sol = solve(prob)
+```
+- Define a Stochastic Differential Equation problem.
+```julia
+prob = SDEProblem(f, g, u0, tspan)
+```
+- Define a Random Ordinary Differential Equation problem.
+```julia
+prob = RODEProblem(eom, u0, tspan)
+```
+- Define a callback that is applied when the `condition` function is `true`.
+```julia
+cb = DiscreteCallback(condition, affect!)
+```
+- Define a callback that is applied when the continuous `condition` function hits zero.
+```julia
+cb = ContinuousCallback(condition, affect!)
+```
+## Distributions
+A Julia package for probability distributions and associated functions.
+- Create a Normal distribution with mean 0 and standard deviation 1.
+```julia
+d = Normal()
+```
+- Create a Normal distribution with mean μ and standard deviation 1.
+```julia
+d = Normal(μ)
+```
+- Create a Normal distribution with mean μ and standard deviation σ.
+```julia
+d = Normal(μ, σ)
+```
+## Flux
+The Julia Machine Learning Library
+- Create a Dense layer with a sigmoid activation function
+```julia
+layer = Dense(10, 5, σ)
+```
+- Chain different layers to form a deep neural network model
+```julia
+model = Chain(Dense(10, 5, σ), Dense(5,3), softmax)
+```
+- Create a Gradient Descent optimiser with learning rate 0.1
+```julia
+opt = Descent(0.1)
+```
+- Extract the parameters of a model `m` which can be later passed on to the `gradient` function
+```julia
+ps = Flux.params(m)
+```
+- Train the model. For each datapoint in `data`, compute the gradient of `loss` with respect to `params` through backpropagation and call the optimizer `opt`. An optional callback is given with the keyword argument `cb`
+```julia
+train!(loss, params, data, opt; cb)
+```
+## JSON
+- Convert dict to JSON
+```julia
+JSON.json(dict)
+```
+## Krylov
+Hand-picked Krylov methods for linear systems and least squares problems
+- Solve linear system Ax = b using the Conjugate gradient method
+```julia
+x, stats = cg(A, b)
+```
+- Solve the least-squares problem ``min ½‖Ax - b‖²`` using the Conjugate gradient method
+```julia
+x, stats = cgls(A, b)
+```
+- Minimize the quadratic function ``f(x) = ½xᵀAx - bᵀx`` subject to the trust region ``‖x‖ ≤ Δ`` using the Steihaug-Toint Conjugate gradient variant
+```julia
+x, stats = cg(A, b, radius=Δ)
+```
+## LinearAlgebra
+- Solve a linear system `Ax = b` using the Cholesky factorization
+```julia
+F = cholesky(A)
+F \ b
+```
+## Plots
+Plotting API and toolset
+- Update an existing plot
+```julia
+plot!(x, y)
+```
+- Save an existing plot to a file
+```julia
+savefig("plot.png")
+```
+- Create a basic Boxplot on a vector of numbers
+```julia
+boxplot(["Series 1"], y)
+```
+- Create a basic Violin plot on a vector of numbers
+```julia
+violin(["Series 1"], y)
+```
+- Create a basic line plot on two vectors of numbers
+```julia
+plot(x, y)
+```
+- Create a basic scatter plot on two vectors of numbers
+```julia
+scatter(x, y)
+```
+## Statistics
+Standard library module for basic statistics functionality.
+- Compute the median of all elements in a collection itr.
+```julia
+median(itr)
+```
+- Compute the median of all elements of a vector v, overwriting the input vector.
+```julia
+median!(v)
+```
+- Compute the quantile(s) of a collection itr at a specified probability or vector or tuple of probabilities p on the interval [0,1].
+```julia
+q = quantile(itr, p)
+```
+- Compute the quantile(s) of a vector v at a specified probability or vector or tuple of probabilities p on the interval [0,1], overwriting v
+```julia
+q = quantile!(v, p)
+```
+## TLDR
+A package for fast help and snippets.
+- Enter `tldr>` mode.
+```julia
+}
+```
+- Search for commands and packages related to the `keyword`.
+```julia
+tldr"keyword"
+```
+## Zygote
+Automatic Differentiation in Julia
+- Computes the gradient of f at each argument, returning a tuple.
+```julia
+gradient(f, args...)
+```
