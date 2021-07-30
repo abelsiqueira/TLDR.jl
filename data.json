@@ -1,5 +1,15 @@
 [
   {
+    "command": "mkdir(\"dir\")",
+    "description": "Create folder \"dir\"",
+    "kind": "snippet",
+    "package": "",
+    "tags": [
+      "folder",
+      "path"
+    ]
+  },
+  {
     "command": "",
     "description": "A package built to be a fast and flexible pure-Julia library for handling delimited text files.",
     "kind": "header",
