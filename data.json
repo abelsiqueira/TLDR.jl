@@ -10,6 +10,18 @@
     ]
   },
   {
+    "command": "a = readline()",
+    "description": "Reads a line from input",
+    "kind": "snippet",
+    "package": "",
+    "tags": [
+      "input",
+      "read",
+      "scanf",
+      "stdin"
+    ]
+  },
+  {
     "command": "",
     "description": "A package built to be a fast and flexible pure-Julia library for handling delimited text files.",
     "kind": "header",
