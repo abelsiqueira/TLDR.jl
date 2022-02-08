@@ -9,7 +9,7 @@ TLDR means Too Long, Didn't Read. This package is inspired by [tldr-pages](https
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/abelsiqueira/TLDR.jl/CI?label=CI&logo=github&style=flat-square)
 [![codecov](https://codecov.io/gh/abelsiqueira/TLDR.jl/branch/main/graph/badge.svg?token=BAXAWOZ3XA)](https://codecov.io/gh/abelsiqueira/TLDR.jl)
 [![GitHub](https://img.shields.io/github/release/abelsiqueira/TLDR.jl.svg?style=flat-square)](https://github.com/abelsiqueira/TLDR.jl/releases)
-[![Docs](https://img.shields.io/github/workflow/status/abelsiqueira/TLDR.jl/Build%20and%20Deploy)](https://abelsiqueira.github.io/TLDR.jl)
+[![Docs](https://img.shields.io/badge/docs-latest-blue)](https://abelsiqueira.github.io/TLDR.jl)
 
 **Work in progress, let me know your opinion**
 
