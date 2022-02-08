@@ -10,6 +10,17 @@
     ]
   },
   {
+    "command": "lines = readlines(filename)",
+    "description": "Read lines of filename",
+    "kind": "snippet",
+    "package": "",
+    "tags": [
+      "input",
+      "lines",
+      "read"
+    ]
+  },
+  {
     "command": "a = readline()",
     "description": "Reads a line from input",
     "kind": "snippet",
