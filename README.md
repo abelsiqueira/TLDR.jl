@@ -12,3 +12,7 @@ TLDR means Too Long, Didn't Read. This package is inspired by [tldr-pages](https
 [![Docs](https://img.shields.io/github/workflow/status/abelsiqueira/TLDR.jl/Build%20and%20Deploy)](https://abelsiqueira.github.io/TLDR.jl)
 
 **Work in progress, let me know your opinion**
+
+---
+
+I have created a proof-of-concept of the search online: https://abelsiqueira.github.io/TLDR-jl/
