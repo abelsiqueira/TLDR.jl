@@ -9,14 +9,14 @@
 
   <channel>
     <title>
-      <![CDATA[  {{fd2rss website_title}}  ]]>
+      <![CDATA[  TLDR.jl  ]]>
     </title>
-    <link> {{website_url}} </link>
+    <link> https://abelsiqueira.github.io/TLDR.jl/ </link>
     <description>
-      <![CDATA[  {{fd2rss website_description}}  ]]>
+      <![CDATA[  Julia snippets  ]]>
     </description>
     <atom:link
-      href="{{fd_rss_feed_url}}"
+      href="https://abelsiqueira.github.io/TLDR.jl/feed.xml"
       rel="self"
       type="application/rss+xml" />
 

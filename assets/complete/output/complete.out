@@ -1,3 +1,11 @@
+- Create folder "dir"
+```julia
+mkdir("dir")
+```
+- Reads a line from input
+```julia
+a = readline()
+```
 ## CSV
 A package built to be a fast and flexible pure-Julia library for handling delimited text files.
 - Read a CSV input.
