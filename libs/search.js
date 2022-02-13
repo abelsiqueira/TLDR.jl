@@ -54,7 +54,8 @@ function parse_cmd(cmd) {
   if (cmd === '') {
     return '';
   } else {
-    return marked.parse('`' + cmd + '`');
+    out = '<code>' + cmd.split('\n').join('<br>') + '</code>'
+    return out;
   }
 }
 
