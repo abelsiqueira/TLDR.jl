@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+$julia-blue: #4063d8;
+$julia-green: #389826;
+$julia-red: #CB3C33;
+$julia-purple: #9558B2;
+
+$primary: $julia-blue;
+$info: $julia-purple;
+$success: $julia-green;
+$danger: $julia-red;
+
+@import "../node_modules/bulma/bulma.sass";
+@font-face {
+  font-family: JuliaMono-Regular;
+  src: url("https://cdn.jsdelivr.net/gh/cormullion/juliamono/webfonts/JuliaMono-Regular.woff2");
+}
+
+#search-output {
+  min-height: 1080px;
+}
+
+code {
+  background: none !important;
+  color: $primary !important;
+  font-size: 1.02em;
+  font-family: JuliaMono-Regular, monospace;
+  padding: 0px;
+}

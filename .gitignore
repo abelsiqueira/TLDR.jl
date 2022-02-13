@@ -2,6 +2,9 @@ __site/
 .DS_Store
 franklin
 franklin.pub
-node_modules/
 .vscode
 Manifest.toml
+
+docs/node_modules/
+docs/_css
+docs/data.json

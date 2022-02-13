@@ -1,5 +1,12 @@
 <!-- CONTENT ENDS HERE -->
-    </div>  <!-- div: content container -->
+        </div>  <!-- div: content -->
+    </div>  <!-- div: section -->
+    <div class="footer has-background-primary-light has-text-black">
+        <div class="content has-text-centered">
+            &copy; {{ fill author }}. {{isnotpage /tag/*}}Last modified: {{ fill fd_mtime }}.{{end}} Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+        </div>
+    </div>
+
     {{ if hasmath }}
         {{ insert foot_katex.html }}
     {{ end }}

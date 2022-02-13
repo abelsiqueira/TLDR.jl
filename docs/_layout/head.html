@@ -5,10 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {{if hasmath}} {{insert head_katex.html }}     {{end}}
   {{if hascode}} {{insert head_highlight.html }}   {{end}}
-  <link rel="stylesheet" href="/css/custom.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.5.3" async></script>
+  <script src="/data.json" async></script>
+  <script src="/libs/search.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" async></script>
+  <script src="https://kit.fontawesome.com/d17d5e5245.js" crossorigin="anonymous" async></script>
   {{insert style.html}}
   {{isdef title}} <title>{{fill title}}</title>  {{end}}
 </head>
 <body>
-{{insert sidebar.html}}
+  {{insert navbar.html}}
+
+  <div class="section">
+    <div class="content">
 <!-- Content appended here -->

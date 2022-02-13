@@ -1,90 +1,24 @@
-@def title = "TLDR"
-@def tags = ["syntax", "code"]
-@def hascode = true
-@def lang = "julia"
+Search the TLDR.jl database here.
 
-# TLDR.jl
+~~~
+<input id="search-input" class="input" type="text" placeholder="Search">
 
-TLDR provides a easy way to find Julia snippets.
+<div class="is-size-5 control mt-5 mb-0">
+  <label class="radio">
+    <input type="radio" name="radio-kind" value="snippet" checked>
+    Snippet
+  </label>
+  <label class="radio">
+    <input type="radio" name="radio-kind" value="package">
+    Package
+  </label>
+  <label class="radio">
+    <input type="radio" name="radio-kind" value="tags">
+    Tags
+  </label>
+</div>
 
-\tableofcontents <!-- you can use \toc as well -->
-
-## Usage
-
-```julia-repl
-julia> using TLDR
-julia> tldr_repl()
-julia> # press }
-tldr>
-```
-
-You can also use `tldr("...")` or `tldr"..."` to enter these comments.
-
-### `tldr> something`
-
-```julia-repl
-tldr> data
-```
-
-```julia:./usage1.jl
-# hideall
-using TLDR
-lines = split(tldr("data", false), "\n")
-println(join(lines[1:10], "\n"))
-println("...")
-```
-
-\output{./usage1.jl}
-
-### `tldr> pkg:something`
-
-Returns all snippets associated with package `something`.
-
-```julia-repl
-tldr> pkg:CSV
-```
-
-```julia:./usage2.jl
-# hideall
-using TLDR
-lines = split(tldr("pkg:CSV", false), "\n")
-println(join(lines[1:10], "\n"))
-println("...")
-```
-
-\output{./usage2.jl}
-
-Instead of `pkg`, `package` can also be used.
-
-### `tldr> cmd:something`
-
-```julia-repl
-tldr> cmd:chol
-```
-
-```julia:./usage3.jl
-# hideall
-using TLDR
-lines = tldr("cmd:chol", false)
-println(lines)
-```
-
-\output{./usage3.jl}
-
-Instead of `cmd`, `command` or `snippet` can also be used. The argument can also be ignored.
-
-### `tldr> ?`
-
-Same as `pkg:TLDR`.
-
-```julia-repl
-tldr> ?
-```
-
-```julia:./usage1.jl
-# hideall
-using TLDR
-tldr("?", false) |> println
-```
-
-\output{./usage1.jl}
+<div class="subsection">
+  <div id="search-output" class="content"></div>
+</div>
+~~~

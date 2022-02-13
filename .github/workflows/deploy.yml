@@ -18,10 +18,11 @@ jobs:
     - name: Install Julia
       uses: julia-actions/setup-julia@v1
       with:
-        version: 1.6.1
-    - run: cd docs/; julia -e '
-            using Pkg; Pkg.add(["NodeJS", "Franklin"]);
-            using NodeJS; run(`$(npm_cmd()) install highlight.js`);
+        version: 1
+    - run: cd docs/; sed 's/^\[/const data = \[/' ../data.json > data.json;
+            julia -e 'using Pkg; Pkg.add(["NodeJS", "Franklin"]);
+            using NodeJS; run(`$(npm_cmd()) install`);
+            run(`$(npm_cmd()) run css-build`);
             using Franklin;
             Pkg.activate(".");Pkg.instantiate();
             optimize()'
