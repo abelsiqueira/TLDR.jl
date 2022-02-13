@@ -1,0 +1,732 @@
+const data = [
+  {
+    "command": "mkdir(\"dir\")",
+    "description": "Create folder \"dir\"",
+    "kind": "snippet",
+    "package": "",
+    "tags": [
+      "folder",
+      "path"
+    ]
+  },
+  {
+    "command": "lines = readlines(filename)",
+    "description": "Read lines of filename",
+    "kind": "snippet",
+    "package": "",
+    "tags": [
+      "input",
+      "lines",
+      "read"
+    ]
+  },
+  {
+    "command": "a = readline()",
+    "description": "Reads a line from input",
+    "kind": "snippet",
+    "package": "",
+    "tags": [
+      "input",
+      "read",
+      "scanf",
+      "stdin"
+    ]
+  },
+  {
+    "command": "",
+    "description": "A package built to be a fast and flexible pure-Julia library for handling delimited text files.",
+    "kind": "header",
+    "package": "CSV",
+    "tags": [
+      "csv",
+      "delimited-files"
+    ]
+  },
+  {
+    "command": "CSV.File(source)",
+    "description": "Read a CSV input.",
+    "kind": "snippet",
+    "package": "CSV",
+    "tags": [
+      "csv",
+      "delimited-files",
+      "read"
+    ]
+  },
+  {
+    "command": "CSV.write(file, table)",
+    "description": "Write table to file.",
+    "kind": "snippet",
+    "package": "CSV",
+    "tags": [
+      "csv",
+      "delimited-files",
+      "output",
+      "write"
+    ]
+  },
+  {
+    "command": "for row in CSV.Rows(source)\n      # do something\n  end",
+    "description": "Read a csv input iterating over its rows. Only the current row values are buffered.",
+    "kind": "snippet",
+    "package": "CSV",
+    "tags": [
+      "csv",
+      "delimited-files",
+      "rows"
+    ]
+  },
+  {
+    "command": "",
+    "description": "Tools to write strings in different colors and styles to terminals",
+    "kind": "header",
+    "package": "Crayons",
+    "tags": [
+      "color",
+      "output"
+    ]
+  },
+  {
+    "command": "print(Crayon(foreground = :red, bold = true, underline = true), \"Bold red text with underline\")",
+    "description": "Print a string using Crayons for formatting",
+    "kind": "snippet",
+    "package": "Crayons",
+    "tags": [
+      "color",
+      "output",
+      "print"
+    ]
+  },
+  {
+    "command": "r_fg = Crayon(foreground = :red, bold = true)",
+    "description": "Create a new Crayon with red foreground color and bold text formatting",
+    "kind": "snippet",
+    "package": "Crayons",
+    "tags": [
+      "color",
+      "output"
+    ]
+  },
+  {
+    "command": "merged = merge(Crayon(foreground:red), Crayon(background: green))",
+    "description": "Merge two crayons with different properties in this case the new crayon will have red foreground color and green background color",
+    "kind": "snippet",
+    "package": "Crayons",
+    "tags": [
+      "color",
+      "merge"
+    ]
+  },
+  {
+    "command": "",
+    "description": "Tools for working with tabular data.",
+    "kind": "header",
+    "package": "DataFrames",
+    "tags": [
+      "data",
+      "data-frame",
+      "datasets",
+      "tabular-data"
+    ]
+  },
+  {
+    "command": "names(df)",
+    "description": "Get the column names",
+    "kind": "snippet",
+    "package": "DataFrames",
+    "tags": [
+      "column-names",
+      "names"
+    ]
+  },
+  {
+    "command": "propertynames(df)",
+    "description": "Get the column names as Symbols",
+    "kind": "snippet",
+    "package": "DataFrames",
+    "tags": [
+      "column-names",
+      "columns"
+    ]
+  },
+  {
+    "command": "last(df, X)",
+    "description": "Look at the last X rows of a data frame",
+    "kind": "snippet",
+    "package": "DataFrames",
+    "tags": [
+      "last",
+      "last-rows",
+      "print-rows",
+      "rows"
+    ]
+  },
+  {
+    "command": "first(df, X)",
+    "description": "Look at the firs X rows of a data frame",
+    "kind": "snippet",
+    "package": "DataFrames",
+    "tags": [
+      "first",
+      "first-rows",
+      "print-rows",
+      "rows"
+    ]
+  },
+  {
+    "command": "df.A = 1:8",
+    "description": "Add a column named `A` to the the DataFrame `df`",
+    "kind": "snippet",
+    "package": "DataFrames",
+    "tags": [
+      "add-columns",
+      "columns",
+      "empty"
+    ]
+  },
+  {
+    "command": "df2 = copy(df)",
+    "description": "Return a new data frame df2 that is a copy of df",
+    "kind": "snippet",
+    "package": "DataFrames",
+    "tags": [
+      "DataFrame",
+      "copy",
+      "data"
+    ]
+  },
+  {
+    "command": "show(df, allrows=true, allcols=true)",
+    "description": "Print all rows and/or columns of the DataFrame `df`",
+    "kind": "snippet",
+    "package": "DataFrames",
+    "tags": [
+      "print-dataframe",
+      "show",
+      "show-all-columns",
+      "show-all-rows",
+      "show-dataframe"
+    ]
+  },
+  {
+    "command": "df = DataFrame(A = 1:3, B = [:odd, :even, :odd])",
+    "description": "Create a new DataFrame by passing the column headers and contents",
+    "kind": "snippet",
+    "package": "DataFrames",
+    "tags": [
+      "DataFrame",
+      "create",
+      "data"
+    ]
+  },
+  {
+    "command": "replace!(df.col_1, \"None\" => 0)",
+    "description": "Replace \"None\" values by zero in a single column col_1 of dataframe df",
+    "kind": "snippet",
+    "package": "DataFrames",
+    "tags": [
+      "DataFrame",
+      "data",
+      "replace",
+      "single column"
+    ]
+  },
+  {
+    "command": "describe(df)",
+    "description": "Return a data frame with some elementary statistics and information about each column",
+    "kind": "snippet",
+    "package": "DataFrames",
+    "tags": [
+      "DataFrame",
+      "data",
+      "describe",
+      "statistics"
+    ]
+  },
+  {
+    "command": "push!(df, (1,\"M\",...))",
+    "description": "Add a new row as a tuple or vector, where the order of elements matches that of the columns of `df`",
+    "kind": "snippet",
+    "package": "DataFrames",
+    "tags": [
+      "add-rows",
+      "rows"
+    ]
+  },
+  {
+    "command": "",
+    "description": "Package for numerically solving differential equations.",
+    "kind": "header",
+    "package": "DifferentialEquations",
+    "tags": [
+      "differential-equations",
+      "numerical-integration",
+      "solve-equation",
+      "time-evolution"
+    ]
+  },
+  {
+    "command": "prob = DiscreteProblem(f, u0, tspan)",
+    "description": "Define a discrete time evolution problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "discrete-time",
+      "map",
+      "problem"
+    ]
+  },
+  {
+    "command": "prob = ODEProblem(eom, u0, tspan)",
+    "description": "Define an Ordinary Differential Equation problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "differential-equation",
+      "ode",
+      "ordinary-differential-equation",
+      "problem"
+    ]
+  },
+  {
+    "command": "prob = DAEProblem(eom, u0, du0, tspan)",
+    "description": "Define a Differential Algebraic Equation problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "algebraic-equation",
+      "dae",
+      "differential-algebraic-equation",
+      "differential-equation",
+      "problem"
+    ]
+  },
+  {
+    "command": "sol = solve(prob)",
+    "description": "Numerically solve a differential equation problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "integrate",
+      "solution",
+      "solve",
+      "trajectory"
+    ]
+  },
+  {
+    "command": "prob = SDEProblem(f, g, u0, tspan)",
+    "description": "Define a Stochastic Differential Equation problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "differential-equation",
+      "problem",
+      "sde",
+      "stochastic-differential-equation"
+    ]
+  },
+  {
+    "command": "prob = RODEProblem(eom, u0, tspan)",
+    "description": "Define a Random Ordinary Differential Equation problem.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "differential-equation",
+      "problem",
+      "random-ordinary-differential-equation",
+      "rode"
+    ]
+  },
+  {
+    "command": "cb = DiscreteCallback(condition, affect!)",
+    "description": "Define a callback that is applied when the `condition` function is `true`.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "callback",
+      "event",
+      "event-handling"
+    ]
+  },
+  {
+    "command": "cb = ContinuousCallback(condition, affect!)",
+    "description": "Define a callback that is applied when the continuous `condition` function hits zero.",
+    "kind": "snippet",
+    "package": "DifferentialEquations",
+    "tags": [
+      "callback",
+      "event",
+      "event-handling"
+    ]
+  },
+  {
+    "command": "",
+    "description": "A Julia package for probability distributions and associated functions.",
+    "kind": "header",
+    "package": "Distributions",
+    "tags": [
+      "entropy",
+      "mass-functions",
+      "maximum-likelihood-estimation",
+      "moment-generating-functions",
+      "moments",
+      "probability-density"
+    ]
+  },
+  {
+    "command": "d = Normal()",
+    "description": "Create a Normal distribution with mean 0 and standard deviation 1.",
+    "kind": "snippet",
+    "package": "Distributions",
+    "tags": [
+      "distribution",
+      "normal-distribution",
+      "probability"
+    ]
+  },
+  {
+    "command": "d = Normal(μ)",
+    "description": "Create a Normal distribution with mean μ and standard deviation 1.",
+    "kind": "snippet",
+    "package": "Distributions",
+    "tags": [
+      "distribution",
+      "normal-distribution",
+      "probability"
+    ]
+  },
+  {
+    "command": "d = Normal(μ, σ)",
+    "description": "Create a Normal distribution with mean μ and standard deviation σ.",
+    "kind": "snippet",
+    "package": "Distributions",
+    "tags": [
+      "distribution",
+      "normal-distribution",
+      "probability"
+    ]
+  },
+  {
+    "command": "",
+    "description": "The Julia Machine Learning Library",
+    "kind": "header",
+    "package": "Flux",
+    "tags": [
+      "ai",
+      "deep-learning",
+      "gradients",
+      "machine-learning"
+    ]
+  },
+  {
+    "command": "layer = Dense(10, 5, σ)",
+    "description": "Create a Dense layer with a sigmoid activation function",
+    "kind": "snippet",
+    "package": "Flux",
+    "tags": [
+      "layers",
+      "neural-networks"
+    ]
+  },
+  {
+    "command": "model = Chain(Dense(10, 5, σ), Dense(5,3), softmax)",
+    "description": "Chain different layers to form a deep neural network model",
+    "kind": "snippet",
+    "package": "Flux",
+    "tags": [
+      "layers",
+      "neural-networks"
+    ]
+  },
+  {
+    "command": "opt = Descent(0.1)",
+    "description": "Create a Gradient Descent optimiser with learning rate 0.1",
+    "kind": "snippet",
+    "package": "Flux",
+    "tags": [
+      "gradient-descent",
+      "neural-network",
+      "optimization"
+    ]
+  },
+  {
+    "command": "ps = Flux.params(m)",
+    "description": "Extract the parameters of a model `m` which can be later passed on to the `gradient` function",
+    "kind": "snippet",
+    "package": "Flux",
+    "tags": [
+      "gradients",
+      "model",
+      "parametes"
+    ]
+  },
+  {
+    "command": "train!(loss, params, data, opt; cb)",
+    "description": "Train the model. For each datapoint in `data`, compute the gradient of `loss` with respect to `params` through backpropagation and call the optimizer `opt`. An optional callback is given with the keyword argument `cb`",
+    "kind": "snippet",
+    "package": "Flux",
+    "tags": [
+      "backpropagation",
+      "callback",
+      "neural-networks",
+      "optimization",
+      "training"
+    ]
+  },
+  {
+    "command": "JSON.json(dict)",
+    "description": "Convert dict to JSON",
+    "kind": "snippet",
+    "package": "JSON",
+    "tags": [
+      "convert",
+      "json"
+    ]
+  },
+  {
+    "command": "",
+    "description": "Hand-picked Krylov methods for linear systems and least squares problems",
+    "kind": "header",
+    "package": "Krylov",
+    "tags": [
+      "conjugate-gradient",
+      "krylov",
+      "least-squares",
+      "linear-algebra",
+      "linear-system",
+      "optimization"
+    ]
+  },
+  {
+    "command": "x, stats = cg(A, b)",
+    "description": "Solve linear system Ax = b using the Conjugate gradient method",
+    "kind": "snippet",
+    "package": "Krylov",
+    "tags": [
+      "conjugate-gradient",
+      "linear-algebra",
+      "linear-system"
+    ]
+  },
+  {
+    "command": "x, stats = cgls(A, b)",
+    "description": "Solve the least-squares problem ``min ½‖Ax - b‖²`` using the Conjugate gradient method",
+    "kind": "snippet",
+    "package": "Krylov",
+    "tags": [
+      "conjugate-gradient",
+      "least-squares",
+      "linear-algebra"
+    ]
+  },
+  {
+    "command": "x, stats = cg(A, b, radius=Δ)",
+    "description": "Minimize the quadratic function ``f(x) = ½xᵀAx - bᵀx`` subject to the trust region ``‖x‖ ≤ Δ`` using the Steihaug-Toint Conjugate gradient variant",
+    "kind": "snippet",
+    "package": "Krylov",
+    "tags": [
+      "conjugate-gradient",
+      "linear-algebra",
+      "quadratic-programming",
+      "steihaug-toint",
+      "trust-region"
+    ]
+  },
+  {
+    "command": "F = cholesky(A)\n  F \\ b",
+    "description": "Solve a linear system `Ax = b` using the Cholesky factorization",
+    "kind": "snippet",
+    "package": "LinearAlgebra",
+    "tags": [
+      "cholesky",
+      "factorization",
+      "linear-algebra"
+    ]
+  },
+  {
+    "command": "",
+    "description": "Plotting API and toolset",
+    "kind": "header",
+    "package": "Plots",
+    "tags": [
+      "plots",
+      "plotting",
+      "visualization"
+    ]
+  },
+  {
+    "command": "plot!(x, y)",
+    "description": "Update an existing plot",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "create",
+      "line",
+      "plot",
+      "update"
+    ]
+  },
+  {
+    "command": "savefig(\"plot.png\")",
+    "description": "Save an existing plot to a file",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "pdf",
+      "plot",
+      "png",
+      "save",
+      "store"
+    ]
+  },
+  {
+    "command": "boxplot([\"Series 1\"], y)",
+    "description": "Create a basic Boxplot on a vector of numbers",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "boxplot",
+      "create",
+      "interquartile-range",
+      "plot"
+    ]
+  },
+  {
+    "command": "violin([\"Series 1\"], y)",
+    "description": "Create a basic Violin plot on a vector of numbers",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "create",
+      "plot",
+      "violin",
+      "violin-plot"
+    ]
+  },
+  {
+    "command": "plot(x, y)",
+    "description": "Create a basic line plot on two vectors of numbers",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "create",
+      "line-plot",
+      "plot"
+    ]
+  },
+  {
+    "command": "scatter(x, y)",
+    "description": "Create a basic scatter plot on two vectors of numbers",
+    "kind": "snippet",
+    "package": "Plots",
+    "tags": [
+      "create",
+      "plot",
+      "scatter",
+      "scatter-plot"
+    ]
+  },
+  {
+    "command": "",
+    "description": "Standard library module for basic statistics functionality.",
+    "kind": "header",
+    "package": "Statistics",
+    "tags": [
+      "mean",
+      "quantile",
+      "statistics",
+      "variance"
+    ]
+  },
+  {
+    "command": "median(itr)",
+    "description": "Compute the median of all elements in a collection itr.",
+    "kind": "snippet",
+    "package": "Statistics",
+    "tags": [
+      "median",
+      "statistics"
+    ]
+  },
+  {
+    "command": "median!(v)",
+    "description": "Compute the median of all elements of a vector v, overwriting the input vector.",
+    "kind": "snippet",
+    "package": "Statistics",
+    "tags": [
+      "median",
+      "statistics"
+    ]
+  },
+  {
+    "command": "q = quantile(itr, p)",
+    "description": "Compute the quantile(s) of a collection itr at a specified probability or vector or tuple of probabilities p on the interval [0,1].",
+    "kind": "snippet",
+    "package": "Statistics",
+    "tags": [
+      "median",
+      "percentile",
+      "quantile",
+      "statistics"
+    ]
+  },
+  {
+    "command": "q = quantile!(v, p)",
+    "description": "Compute the quantile(s) of a vector v at a specified probability or vector or tuple of probabilities p on the interval [0,1], overwriting v",
+    "kind": "snippet",
+    "package": "Statistics",
+    "tags": [
+      "percentile",
+      "quantile",
+      "statistics"
+    ]
+  },
+  {
+    "command": "",
+    "description": "A package for fast help and snippets.",
+    "kind": "header",
+    "package": "TLDR",
+    "tags": [
+      "help",
+      "snippet"
+    ]
+  },
+  {
+    "command": "}",
+    "description": "Enter `tldr>` mode.",
+    "kind": "snippet",
+    "package": "TLDR",
+    "tags": [
+      "help",
+      "snippet"
+    ]
+  },
+  {
+    "command": "tldr\"keyword\"",
+    "description": "Search for commands and packages related to the `keyword`.",
+    "kind": "snippet",
+    "package": "TLDR",
+    "tags": [
+      "help",
+      "snippet"
+    ]
+  },
+  {
+    "command": "",
+    "description": "Automatic Differentiation in Julia",
+    "kind": "header",
+    "package": "Zygote",
+    "tags": [
+      "gradients"
+    ]
+  },
+  {
+    "command": "gradient(f, args...)",
+    "description": "Computes the gradient of f at each argument, returning a tuple.",
+    "kind": "snippet",
+    "package": "Zygote",
+    "tags": [
+      "gradients"
+    ]
+  }
+]

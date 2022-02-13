@@ -1,0 +1,73 @@
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/TLDR.jl/libs/highlight/github.min.css"> <link rel=stylesheet  href="/TLDR.jl/css/style.css"> <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.5.3" async></script> <script src="/TLDR.jl/data.json" async></script> <script src="/TLDR.jl/libs/search.js" async></script> <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" async></script> <script src="https://kit.fontawesome.com/d17d5e5245.js" crossorigin=anonymous  async></script> <link rel=stylesheet  href="css/style.css"> <!-- <style> html {font-size: 17px;} .franklin-content {position: relative; padding-left: 8%; padding-right: 5%; line-height: 1.35em;} @media (min-width: 940px) { .franklin-content {width: 100%; margin-left: auto; margin-right: auto;} } @media (max-width: 768px) { .franklin-content {padding-left: 6%; padding-right: 6%;} } </style> --> <link rel=icon  href="/TLDR.jl/assets/favicon.jpg"> <title>TLDR</title> <div class="navbar is-primary"> <div class=navbar-brand > <a class="navbar-item is-size-3" href="/TLDR.jl/"> TLDR.jl </a> </div> <div class="navbar-menu is-size-4"> <div class=navbar-end > <a class=navbar-item  href="/TLDR.jl/"> Home </a> <a class=navbar-item  href="/TLDR.jl/usage"> Usage </a> <a class=navbar-item  href="/TLDR.jl/contributing"> Contributing </a> <a class=navbar-item  href="/TLDR.jl/complete"> Complete list </a> </div> </div> </div> <div class=section > <div class=content > <div class=container ><h1 id=tldrjl ><a href="#tldrjl" class=header-anchor >TLDR.jl</a></h1> <p>TLDR provides a easy way to find Julia snippets. You can search for snippets <a href="/TLDR.jl/">in this site</a> or locally by installing <code>TLDR.jl</code>.</p> <div class=franklin-toc ><ol><li><a href="#usage">Usage</a><ol><li><a href="#tldr_something"><code>tldr&gt; something</code></a><li><a href="#tldr_pkgsomething"><code>tldr&gt; pkg:something</code></a><li><a href="#tldr_cmdsomething"><code>tldr&gt; cmd:something</code></a><li><a href="#tldr"><code>tldr&gt; ?</code></a></ol></ol></div> <h2 id=usage ><a href="#usage" class=header-anchor >Usage</a></h2> <pre><code class=language-julia-repl >julia&gt; using TLDR
+julia&gt; tldr_repl&#40;&#41;
+julia&gt; # press &#125;
+tldr&gt;</code></pre> <p>You can also use <code>tldr&#40;&quot;...&quot;&#41;</code> or <code>tldr&quot;...&quot;</code> to enter these comments.</p> <h3 id=tldr_something ><a href="#tldr_something" class=header-anchor ><code>tldr&gt; something</code></a></h3> <pre><code class=language-julia-repl >tldr&gt; data</code></pre>
+
+<pre><code class="plaintext code-output">DataFrames
+
+Tools for working with tabular data.
+
+- Look at the last X rows of a data frame
+  `last(df, X)`
+
+- Look at the firs X rows of a data frame
+  `first(df, X)`
+
+...
+</code></pre>
+<h3 id=tldr_pkgsomething ><a href="#tldr_pkgsomething" class=header-anchor ><code>tldr&gt; pkg:something</code></a></h3>
+<p>Returns all snippets associated with package <code>something</code>.</p>
+<pre><code class=language-julia-repl >tldr&gt; pkg:CSV</code></pre>
+
+<pre><code class="plaintext code-output">CSV
+
+A package built to be a fast and flexible pure-Julia library for handling delimited text files.
+
+- Read a CSV input.
+  `CSV.File(source)`
+
+- Write table to file.
+  `CSV.write(file, table)`
+
+...
+</code></pre>
+<p>Instead of <code>pkg</code>, <code>package</code> can also be used.</p>
+<h3 id=tldr_cmdsomething ><a href="#tldr_cmdsomething" class=header-anchor ><code>tldr&gt; cmd:something</code></a></h3>
+<pre><code class=language-julia-repl >tldr&gt; cmd:chol</code></pre>
+
+<pre><code class="plaintext code-output">- Solve a linear system `Ax = b` using the Cholesky factorization
+  `F = cholesky(A)
+  F \ b`
+
+
+</code></pre>
+<p>Instead of <code>cmd</code>, <code>command</code> or <code>snippet</code> can also be used. The argument can also be ignored.</p>
+<h3 id=tldr ><a href="#tldr" class=header-anchor ><code>tldr&gt; ?</code></a></h3>
+<p>Same as <code>pkg:TLDR</code>.</p>
+<pre><code class=language-julia-repl >tldr&gt; ?</code></pre>
+
+<pre><code class="plaintext code-output">TLDR
+
+A package for fast help and snippets.
+
+- Enter `tldr>` mode.
+  `}`
+
+- Search for commands and packages related to the `keyword`.
+  `tldr"keyword"`
+
+
+</code></pre>
+</div>
+        </div>  
+    </div>  
+    <div class="footer has-background-primary-light has-text-black">
+        <div class="content has-text-centered">
+            &copy; Abel Soares Siqueira. Last modified: February 13, 2022. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+        </div>
+    </div>
+
+    
+    
+        <script src="/TLDR.jl/libs/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>

@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "bulma": "^0.9.3",
+    "highlight.js": "^11.4.0"
+  },
+  "name": "tldr-docs",
+  "version": "1.0.0",
+  "description": "Site for TLDR.jl",
+  "scripts": {
+    "css-build": "node-sass --omit-source-map-url _sass/style.scss _css/style.css",
+    "css-watch": "npm run css-build -- --watch"
+  },
+  "author": "Abel Soares Siqueira",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
