@@ -67,7 +67,7 @@ function formatSnippetItem(item) {
   } else {
     pkg = 'no package needed'
   }
-  let out = `<div class="notification is-primary is-light has-text-black">
+  let out = `<div class="notification is-success is-light has-text-black">
     <h3>${parse_cmd(item.command)}</h3>
     <span><strong>${pkg}</strong></span>
     ${marked.parse(item.description)}`
@@ -80,7 +80,7 @@ function formatSnippetItem(item) {
 
 function formatPackageItem(item) {
   // This is a package header item
-  let out = `<div class="notification is-primary is-light has-text-black">
+  let out = `<div class="notification is-success is-light has-text-black">
     <div class="block">
       <h2 class="is-primary">${item.package}</h2>
       <span class="subtitle">${item.description}</span>
