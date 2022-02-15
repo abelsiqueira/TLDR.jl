@@ -33,6 +33,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "ParthPant",
+      "name": "Parth Pant",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30381591?v=4",
+      "profile": "http://parthetic.me",
+      "contributions": [
+        "data"
+      ]
     }
   ],
   "contributorsPerLine": 7,
