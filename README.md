@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/abelsiqueira/TLDR.jl/branch/main/graph/badge.svg?token=BAXAWOZ3XA)](https://codecov.io/gh/abelsiqueira/TLDR.jl)
 [![GitHub](https://img.shields.io/github/release/abelsiqueira/TLDR.jl.svg?style=flat-square)](https://github.com/abelsiqueira/TLDR.jl/releases)
 [![Docs](https://img.shields.io/badge/docs-and__site-blue)](https://abelsiqueira.github.io/TLDR.jl)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <img align="right" width="150" height="150" src="TLDR.jpg">
@@ -43,6 +43,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://vcoutasso.com"><img src="https://avatars.githubusercontent.com/u/44986513?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vinícius Couto Tasso</b></sub></a><br /><a href="https://github.com/abelsiqueira/TLDR.jl/commits?author=vcoutasso" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Jualns"><img src="https://avatars.githubusercontent.com/u/43074392?v=4?s=100" width="100px;" alt=""/><br /><sub><b>João Victor da Silva</b></sub></a><br /><a href="#data-Jualns" title="Data">🔣</a></td>
     <td align="center"><a href="https://github.com/JoaoAPS"><img src="https://avatars.githubusercontent.com/u/65475396?v=4?s=100" width="100px;" alt=""/><br /><sub><b>João Paludo</b></sub></a><br /><a href="#data-JoaoAPS" title="Data">🔣</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://linkedin.com/in/soham-biswas-590784168"><img src="https://avatars.githubusercontent.com/u/29832615?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Soham Biswas</b></sub></a><br /><a href="#data-Nibba2018" title="Data">🔣</a></td>
   </tr>
 </table>
 
