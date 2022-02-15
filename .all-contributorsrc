@@ -14,6 +14,15 @@
         "code",
         "data"
       ]
+    },
+    {
+      "login": "chunggnuhc",
+      "name": "Kally Chung",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6722874?v=4",
+      "profile": "http://chunggnuhc.github.io",
+      "contributions": [
+        "data"
+      ]
     }
   ],
   "contributorsPerLine": 7,
