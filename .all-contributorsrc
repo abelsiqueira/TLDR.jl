@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "abelsiqueira",
+      "name": "Abel Siqueira",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1068752?v=4",
+      "profile": "http://abelsiqueira.github.io",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "TLDR.jl",
+  "projectOwner": "abelsiqueira",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
