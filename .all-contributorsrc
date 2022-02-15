@@ -51,6 +51,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Jualns",
+      "name": "João Victor da Silva",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43074392?v=4",
+      "profile": "https://github.com/Jualns",
+      "contributions": [
+        "data"
+      ]
     }
   ],
   "contributorsPerLine": 7,
