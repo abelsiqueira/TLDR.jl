@@ -20,6 +20,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/Jualns"><img src="https://avatars.githubusercontent.com/u/43074392?v=4?s=100" width="100px;" alt=""/><br /><sub><b>João Victor da Silva</b></sub></a><br /><a href="#data-Jualns" title="Data">🔣</a></td>
     <td align="center"><a href="https://github.com/JoaoAPS"><img src="https://avatars.githubusercontent.com/u/65475396?v=4?s=100" width="100px;" alt=""/><br /><sub><b>João Paludo</b></sub></a><br /><a href="#data-JoaoAPS" title="Data">🔣</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="http://linkedin.com/in/soham-biswas-590784168"><img src="https://avatars.githubusercontent.com/u/29832615?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Soham Biswas</b></sub></a><br /><a href="#data-Nibba2018" title="Data">🔣</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
