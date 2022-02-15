@@ -20,6 +20,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>https://abelsiqueira.github.io/TLDR.jl/contributors/index.html</loc>
+    <lastmod>2022-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>https://abelsiqueira.github.io/TLDR.jl/complete/index.html</loc>
     <lastmod>2022-02-15</lastmod>
     <changefreq>monthly</changefreq>
