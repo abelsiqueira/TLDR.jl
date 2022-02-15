@@ -34,7 +34,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="http://abelsiqueira.github.io"><img src="https://avatars.githubusercontent.com/u/1068752?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Abel Siqueira</b></sub></a><br /><a href="https://github.com/abelsiqueira/TLDR.jl/commits?author=abelsiqueira" title="Code">💻</a></td>
+    <td align="center"><a href="http://abelsiqueira.github.io"><img src="https://avatars.githubusercontent.com/u/1068752?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Abel Siqueira</b></sub></a><br /><a href="https://github.com/abelsiqueira/TLDR.jl/commits?author=abelsiqueira" title="Code">💻</a> <a href="#data-abelsiqueira" title="Data">🔣</a></td>
   </tr>
 </table>
 
