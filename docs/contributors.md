@@ -15,6 +15,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://abelsiqueira.github.io"><img src="https://avatars.githubusercontent.com/u/1068752?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Abel Siqueira</b></sub></a><br /><a href="https://github.com/abelsiqueira/TLDR.jl/commits?author=abelsiqueira" title="Code">💻</a> <a href="#data-abelsiqueira" title="Data">🔣</a></td>
     <td align="center"><a href="http://chunggnuhc.github.io"><img src="https://avatars.githubusercontent.com/u/6722874?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kally Chung</b></sub></a><br /><a href="#data-chunggnuhc" title="Data">🔣</a></td>
     <td align="center"><a href="https://github.com/raiutkarsh09"><img src="https://avatars.githubusercontent.com/u/55653820?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Utkarsh Rai</b></sub></a><br /><a href="https://github.com/abelsiqueira/TLDR.jl/commits?author=raiutkarsh09" title="Code">💻</a></td>
+    <td align="center"><a href="http://parthetic.me"><img src="https://avatars.githubusercontent.com/u/30381591?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Parth Pant</b></sub></a><br /><a href="#data-ParthPant" title="Data">🔣</a></td>
   </tr>
 </table>
 
