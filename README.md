@@ -20,5 +20,5 @@ I have created a proof-of-concept of the search online: https://abelsiqueira.git
 Here's a sneak peak:
 
 <a href="https://abelsiqueira.github.io/TLDR.jl/">
-  <img width="70%" src="site-preview.png">
+  <img width="90%" src="site-preview.png">
 </a>
