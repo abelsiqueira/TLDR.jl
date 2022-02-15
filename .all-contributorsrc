@@ -1,6 +1,7 @@
 {
   "files": [
-    "README.md", "docs/contributors.md"
+    "README.md",
+    "docs/contributors.md"
   ],
   "imageSize": 100,
   "commit": false,
@@ -12,6 +13,15 @@
       "profile": "http://abelsiqueira.github.io",
       "contributions": [
         "code",
+        "data"
+      ]
+    },
+    {
+      "login": "chunggnuhc",
+      "name": "Kally Chung",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6722874?v=4",
+      "profile": "http://chunggnuhc.github.io",
+      "contributions": [
         "data"
       ]
     }
