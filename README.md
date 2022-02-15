@@ -15,4 +15,10 @@ TLDR means Too Long, Didn't Read. This package is inspired by [tldr-pages](https
 
 ---
 
-I have created a proof-of-concept of the search online: https://abelsiqueira.github.io/TLDR-jl/
+I have created a proof-of-concept of the search online: https://abelsiqueira.github.io/TLDR.jl/
+
+Here's a sneak peak:
+
+<a href="https://abelsiqueira.github.io/TLDR.jl/">
+  <img width="70%" src="site-preview.png">
+</a>
