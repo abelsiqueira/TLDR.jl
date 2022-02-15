@@ -85,5 +85,5 @@
   "projectOwner": "abelsiqueira",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": false
 }
