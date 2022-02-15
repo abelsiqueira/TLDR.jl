@@ -24,6 +24,15 @@
       "contributions": [
         "data"
       ]
+    },
+    {
+      "login": "raiutkarsh09",
+      "name": "Utkarsh Rai",
+      "avatar_url": "https://avatars.githubusercontent.com/u/55653820?v=4",
+      "profile": "https://github.com/raiutkarsh09",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
