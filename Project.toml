@@ -1,7 +1,7 @@
 name = "TLDR"
 uuid = "ea576619-15d3-4675-b24c-7b7a8f11ced0"
 authors = ["Abel Soares Siqueira <abel.s.siqueira@gmail.com>"]
-version = "0.1.1"
+version = "0.2.0"
 
 [deps]
 Crayons = "a8cc5b0e-0ffa-5ad4-8c14-923d3ee1735f"
